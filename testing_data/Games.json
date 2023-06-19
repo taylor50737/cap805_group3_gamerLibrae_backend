@@ -1,0 +1,1802 @@
+[
+  {
+    "name": "Kentucky Route Zero",
+    "developer": "343 Industries",
+    "publisher": "Bandai Namco",
+    "releaseDate": "09/29/2022",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "adventure"
+  },
+  {
+    "name": "World of Warcraft: Classic",
+    "developer": "Konami",
+    "publisher": "Sega",
+    "releaseDate": "01/18/2023",
+    "genre": "Action",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Guild Wars 2",
+    "developer": "Square Enix",
+    "publisher": "Activision",
+    "releaseDate": "04/11/2023",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "The Stanley Parable",
+    "developer": "Namco",
+    "publisher": "Ubisoft",
+    "releaseDate": "01/17/2023",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Destiny 2",
+    "developer": "Microsoft Studios",
+    "publisher": "Electronic Arts",
+    "releaseDate": "06/18/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "Until Dawn",
+    "developer": "Electronic Arts",
+    "publisher": "Take-Two Interactive",
+    "releaseDate": "03/24/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "Age of Empires II",
+    "developer": "Rockstar Games",
+    "publisher": "THQ Nordic",
+    "releaseDate": "06/06/2023",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Hades",
+    "developer": "CD Projekt Red",
+    "publisher": "Capcom",
+    "releaseDate": "12/04/2022",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Crusader Kings III",
+    "developer": "Blizzard Entertainment",
+    "publisher": "Konami",
+    "releaseDate": "12/01/2022",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Paper Mario: The Origami King",
+    "developer": "Gearbox Software",
+    "publisher": "Devolver Digital",
+    "releaseDate": "03/12/2023",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Middle-earth: Shadow of Mordor",
+    "developer": "Capcom",
+    "publisher": "THQ Nordic",
+    "releaseDate": "08/01/2022",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Hollow Knight",
+    "developer": "Activision",
+    "publisher": "Square Enix",
+    "releaseDate": "01/27/2023",
+    "genre": "Shooter",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Xenoblade Chronicles 2",
+    "developer": "Konami",
+    "publisher": "Valve Corporation",
+    "releaseDate": "09/11/2022",
+    "genre": "Simulation",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Pokémon: Let's Go",
+    "developer": "CD Projekt Red",
+    "publisher": "Activision",
+    "releaseDate": "06/08/2023",
+    "genre": "Adventure",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "The Vanishing of Ethan Carter",
+    "developer": "Microsoft Studios",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "11/02/2022",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Machinarium",
+    "developer": "Namco",
+    "publisher": "Electronic Arts",
+    "releaseDate": "01/16/2023",
+    "genre": "Sports",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Batman: Arkham City",
+    "developer": "Bethesda Softworks",
+    "publisher": "Nintendo",
+    "releaseDate": "09/29/2022",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "BioShock Infinite",
+    "developer": "Konami",
+    "publisher": "Valve Corporation",
+    "releaseDate": "12/29/2022",
+    "genre": "Shooter",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "Resident Evil 3",
+    "developer": "Bethesda Softworks",
+    "publisher": "Sega",
+    "releaseDate": "10/03/2022",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "Everquest",
+    "developer": "Valve Corporation",
+    "publisher": "Nintendo",
+    "releaseDate": "11/15/2022",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "platformer"
+  },
+  {
+    "name": "Sekiro: Shadows Die Twice",
+    "developer": "Epic Games",
+    "publisher": "2K Games",
+    "releaseDate": "03/27/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "strategy"
+  },
+  {
+    "name": "Runescape",
+    "developer": "Konami",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "02/15/2023",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "simulation"
+  },
+  {
+    "name": "Super Mario 64",
+    "developer": "Namco",
+    "publisher": "Square Enix",
+    "releaseDate": "01/18/2023",
+    "genre": "Adventure",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "The Sims",
+    "developer": "Epic Games",
+    "publisher": "Electronic Arts",
+    "releaseDate": "09/27/2022",
+    "genre": "Shooter",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Europa Universalis IV",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Valve Corporation",
+    "releaseDate": "08/02/2022",
+    "genre": "Adventure",
+    "platform": "Xbox One",
+    "tag": "role-playing"
+  },
+  {
+    "name": "The Elder Scrolls V: Skyrim Special Edition",
+    "developer": "Bungie",
+    "publisher": "Sega",
+    "releaseDate": "07/15/2022",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Pac-Man",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "07/02/2022",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "racing"
+  },
+  {
+    "name": "Super Smash Bros. Ultimate",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "CD Projekt",
+    "releaseDate": "07/16/2022",
+    "genre": "Sports",
+    "platform": "Xbox One",
+    "tag": "strategy"
+  },
+  {
+    "name": "Anthem",
+    "developer": "CD Projekt Red",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "06/16/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "racing"
+  },
+  {
+    "name": "X-Plane 11",
+    "developer": "Ubisoft",
+    "publisher": "Square Enix",
+    "releaseDate": "01/28/2023",
+    "genre": "Simulation",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "The Witness",
+    "developer": "Electronic Arts",
+    "publisher": "Rockstar Games",
+    "releaseDate": "04/09/2023",
+    "genre": "Shooter",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "What Remains of Edith Finch",
+    "developer": "Epic Games",
+    "publisher": "Square Enix",
+    "releaseDate": "10/20/2022",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "Mass Effect 3",
+    "developer": "Square Enix",
+    "publisher": "Square Enix",
+    "releaseDate": "11/24/2022",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "Fallout 3",
+    "developer": "Rockstar Games",
+    "publisher": "Square Enix",
+    "releaseDate": "02/16/2023",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "Star Wars: Knights of the Old Republic II - The Sith Lords",
+    "developer": "Square Enix",
+    "publisher": "Electronic Arts",
+    "releaseDate": "12/08/2022",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Star Wars: Knights of the Old Republic",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "03/30/2023",
+    "genre": "Action",
+    "platform": "Nintendo Switch",
+    "tag": "adventure"
+  },
+  {
+    "name": "Transistor",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "CD Projekt",
+    "releaseDate": "05/15/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Rocket League",
+    "developer": "Gearbox Software",
+    "publisher": "Nintendo",
+    "releaseDate": "04/30/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "simulation"
+  },
+  {
+    "name": "The Legend of Zelda: Skyward Sword HD",
+    "developer": "Electronic Arts",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "09/28/2022",
+    "genre": "Simulation",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Minecraft",
+    "developer": "Namco",
+    "publisher": "Konami",
+    "releaseDate": "01/10/2023",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "strategy"
+  },
+  {
+    "name": "Fallout 3",
+    "developer": "Ubisoft",
+    "publisher": "Sega",
+    "releaseDate": "01/26/2023",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Minecraft Dungeons",
+    "developer": "Bethesda Softworks",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "08/27/2022",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Skyrim",
+    "developer": "Rockstar Games",
+    "publisher": "Konami",
+    "releaseDate": "03/04/2023",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Batman: Arkham City",
+    "developer": "Activision",
+    "publisher": "Devolver Digital",
+    "releaseDate": "09/02/2022",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Telltale's Batman",
+    "developer": "Sega",
+    "publisher": "Square Enix",
+    "releaseDate": "11/01/2022",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "The Vanishing of Ethan Carter",
+    "developer": "Namco",
+    "publisher": "Capcom",
+    "releaseDate": "04/15/2023",
+    "genre": "Simulation",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Civilization VI",
+    "developer": "Epic Games",
+    "publisher": "Capcom",
+    "releaseDate": "10/22/2022",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "sports"
+  },
+  {
+    "name": "Super Mario 64",
+    "developer": "Bethesda Softworks",
+    "publisher": "Ubisoft",
+    "releaseDate": "05/26/2023",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Hearts of Iron IV",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Bandai Namco",
+    "releaseDate": "07/14/2022",
+    "genre": "Adventure",
+    "platform": "PlayStation 4",
+    "tag": "sports"
+  },
+  {
+    "name": "Total War: Rome II",
+    "developer": "Square Enix",
+    "publisher": "Rockstar Games",
+    "releaseDate": "04/27/2023",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "Runescape",
+    "developer": "Epic Games",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "05/07/2023",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Telltale's Batman",
+    "developer": "CD Projekt Red",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "02/19/2023",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "simulation"
+  },
+  {
+    "name": "Shovel Knight",
+    "developer": "Activision",
+    "publisher": "Devolver Digital",
+    "releaseDate": "09/18/2022",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Night in the Woods",
+    "developer": "Bungie",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "03/13/2023",
+    "genre": "Shooter",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Xenoblade Chronicles 2",
+    "developer": "Valve Corporation",
+    "publisher": "Capcom",
+    "releaseDate": "03/28/2023",
+    "genre": "Action",
+    "platform": "Nintendo Switch",
+    "tag": "platformer"
+  },
+  {
+    "name": "Total War: Warhammer II",
+    "developer": "Nintendo",
+    "publisher": "2K Games",
+    "releaseDate": "12/21/2022",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "platformer"
+  },
+  {
+    "name": "This War of Mine",
+    "developer": "Square Enix",
+    "publisher": "Nintendo",
+    "releaseDate": "11/19/2022",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Planet Coaster",
+    "developer": "Activision",
+    "publisher": "CD Projekt",
+    "releaseDate": "03/25/2023",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Street Fighter II",
+    "developer": "Sega",
+    "publisher": "Rockstar Games",
+    "releaseDate": "05/23/2023",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "platformer"
+  },
+  {
+    "name": "RimWorld",
+    "developer": "Microsoft Studios",
+    "publisher": "Nintendo",
+    "releaseDate": "07/02/2022",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "platformer"
+  },
+  {
+    "name": "Braid",
+    "developer": "Square Enix",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "06/27/2022",
+    "genre": "RPG",
+    "platform": "PlayStation 4",
+    "tag": "puzzle"
+  },
+  {
+    "name": "World of Warcraft",
+    "developer": "Microsoft Studios",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "09/14/2022",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "racing"
+  },
+  {
+    "name": "Bloodborne",
+    "developer": "Valve Corporation",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "11/06/2022",
+    "genre": "Adventure",
+    "platform": "PlayStation 4",
+    "tag": "simulation"
+  },
+  {
+    "name": "Please",
+    "developer": "Valve Corporation",
+    "publisher": "Devolver Digital",
+    "releaseDate": "12/11/2022",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Telltale's Batman",
+    "developer": "CD Projekt Red",
+    "publisher": "Electronic Arts",
+    "releaseDate": "03/21/2023",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "Middle-earth: Shadow of War",
+    "developer": "343 Industries",
+    "publisher": "Konami",
+    "releaseDate": "06/07/2023",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "racing"
+  },
+  {
+    "name": "Kingdom Hearts III",
+    "developer": "Gearbox Software",
+    "publisher": "Electronic Arts",
+    "releaseDate": "03/08/2023",
+    "genre": "Action",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "The Vanishing of Ethan Carter",
+    "developer": "Electronic Arts",
+    "publisher": "Devolver Digital",
+    "releaseDate": "11/06/2022",
+    "genre": "Simulation",
+    "platform": "PlayStation 4",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Super Mario Bros.",
+    "developer": "Blizzard Entertainment",
+    "publisher": "Valve Corporation",
+    "releaseDate": "10/14/2022",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "sports"
+  },
+  {
+    "name": "Telltale's Tales from the Borderlands",
+    "developer": "Bethesda Softworks",
+    "publisher": "Konami",
+    "releaseDate": "07/20/2022",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Ape Out",
+    "developer": "Valve Corporation",
+    "publisher": "Electronic Arts",
+    "releaseDate": "11/01/2022",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Super Mario Odyssey",
+    "developer": "Blizzard Entertainment",
+    "publisher": "Devolver Digital",
+    "releaseDate": "09/06/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "Orwell",
+    "developer": "Namco",
+    "publisher": "Konami",
+    "releaseDate": "01/16/2023",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Star Wars: The Old Republic",
+    "developer": "Microsoft Studios",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "12/07/2022",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Beyond: Two Souls",
+    "developer": "Konami",
+    "publisher": "Bandai Namco",
+    "releaseDate": "06/11/2023",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "The Legend of Zelda: Skyward Sword HD",
+    "developer": "Blizzard Entertainment",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "02/14/2023",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "racing"
+  },
+  {
+    "name": "The Elder Scrolls V: Skyrim Special Edition",
+    "developer": "Valve Corporation",
+    "publisher": "Electronic Arts",
+    "releaseDate": "01/05/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Star Wars: Battlefront II",
+    "developer": "343 Industries",
+    "publisher": "Rockstar Games",
+    "releaseDate": "03/30/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "Dota 2",
+    "developer": "Blizzard Entertainment",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "11/04/2022",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Hyrule Warriors: Age of Calamity",
+    "developer": "Gearbox Software",
+    "publisher": "Activision",
+    "releaseDate": "09/07/2022",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "The Talos Principle",
+    "developer": "Microsoft Studios",
+    "publisher": "Sega",
+    "releaseDate": "06/19/2022",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Fallout: New Vegas",
+    "developer": "Rockstar Games",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "09/13/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "strategy"
+  },
+  {
+    "name": "Shovel Knight",
+    "developer": "CD Projekt Red",
+    "publisher": "Rockstar Games",
+    "releaseDate": "02/04/2023",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "Anthem",
+    "developer": "Namco",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "03/20/2023",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "Middle-earth: Shadow of War",
+    "developer": "Epic Games",
+    "publisher": "Ubisoft",
+    "releaseDate": "04/27/2023",
+    "genre": "Action",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "RimWorld",
+    "developer": "Microsoft Studios",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "07/24/2022",
+    "genre": "Shooter",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Hearts of Iron IV",
+    "developer": "Epic Games",
+    "publisher": "2K Games",
+    "releaseDate": "09/20/2022",
+    "genre": "Simulation",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Black Desert Online",
+    "developer": "Microsoft Studios",
+    "publisher": "Activision",
+    "releaseDate": "05/23/2023",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "Batman: The Telltale Series",
+    "developer": "Activision",
+    "publisher": "Rockstar Games",
+    "releaseDate": "10/14/2022",
+    "genre": "Action",
+    "platform": "Nintendo Switch",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Life is Strange",
+    "developer": "Square Enix",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "04/19/2023",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "Cities: Skylines",
+    "developer": "Epic Games",
+    "publisher": "THQ Nordic",
+    "releaseDate": "10/09/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Darkest Dungeon",
+    "developer": "Nintendo",
+    "publisher": "Square Enix",
+    "releaseDate": "09/05/2022",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "Papers",
+    "developer": "Epic Games",
+    "publisher": "Devolver Digital",
+    "releaseDate": "10/02/2022",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "Gris",
+    "developer": "Bethesda Softworks",
+    "publisher": "THQ Nordic",
+    "releaseDate": "03/20/2023",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "simulation"
+  },
+  {
+    "name": "Streets of Rage 4",
+    "developer": "343 Industries",
+    "publisher": "Activision",
+    "releaseDate": "07/04/2022",
+    "genre": "Fighting",
+    "platform": "PlayStation 4",
+    "tag": "strategy"
+  },
+  {
+    "name": "Counter-Strike: Global Offensive",
+    "developer": "CD Projekt Red",
+    "publisher": "Square Enix",
+    "releaseDate": "12/27/2022",
+    "genre": "RPG",
+    "platform": "PlayStation 4",
+    "tag": "strategy"
+  },
+  {
+    "name": "X-Plane 11",
+    "developer": "Activision",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "03/03/2023",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Batman: Arkham City",
+    "developer": "Microsoft Studios",
+    "publisher": "Valve Corporation",
+    "releaseDate": "07/05/2022",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Minecraft",
+    "developer": "Square Enix",
+    "publisher": "Take-Two Interactive",
+    "releaseDate": "04/26/2023",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Pokémon Sword and Shield",
+    "developer": "Namco",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "05/11/2023",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "simulation"
+  },
+  {
+    "name": "The Sims 2",
+    "developer": "Sega",
+    "publisher": "Electronic Arts",
+    "releaseDate": "03/13/2023",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Anthem",
+    "developer": "Square Enix",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "03/12/2023",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "adventure"
+  },
+  {
+    "name": "Hollow Knight",
+    "developer": "Konami",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "06/27/2022",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Firewatch",
+    "developer": "Epic Games",
+    "publisher": "THQ Nordic",
+    "releaseDate": "02/04/2023",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "Batman: Arkham City",
+    "developer": "Electronic Arts",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "11/11/2022",
+    "genre": "Simulation",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Inside",
+    "developer": "Sega",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "04/30/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Super Mario Odyssey",
+    "developer": "CD Projekt Red",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "12/21/2022",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "strategy"
+  },
+  {
+    "name": "Splatoon 2",
+    "developer": "CD Projekt Red",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "11/21/2022",
+    "genre": "Action",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Pillars of Eternity",
+    "developer": "Sega",
+    "publisher": "Bandai Namco",
+    "releaseDate": "01/17/2023",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Resident Evil 3",
+    "developer": "Bungie",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "02/16/2023",
+    "genre": "Shooter",
+    "platform": "Nintendo Switch",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Hotline Miami",
+    "developer": "Microsoft Studios",
+    "publisher": "Nintendo",
+    "releaseDate": "05/25/2023",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "simulation"
+  },
+  {
+    "name": "Batman: Arkham Knight",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Square Enix",
+    "releaseDate": "04/25/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Luigi's Mansion 3",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "2K Games",
+    "releaseDate": "12/24/2022",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "adventure"
+  },
+  {
+    "name": "What Remains of Edith Finch",
+    "developer": "Epic Games",
+    "publisher": "THQ Nordic",
+    "releaseDate": "03/11/2023",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Dragon Age: Inquisition",
+    "developer": "Blizzard Entertainment",
+    "publisher": "CD Projekt",
+    "releaseDate": "12/22/2022",
+    "genre": "Action",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Overwatch",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "07/09/2022",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "sports"
+  },
+  {
+    "name": "The Last Guardian",
+    "developer": "Capcom",
+    "publisher": "Capcom",
+    "releaseDate": "09/07/2022",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "simulation"
+  },
+  {
+    "name": "Middle-earth: Shadow of Mordor",
+    "developer": "Ubisoft",
+    "publisher": "Square Enix",
+    "releaseDate": "03/28/2023",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "strategy"
+  },
+  {
+    "name": "Disco Elysium",
+    "developer": "343 Industries",
+    "publisher": "Sega",
+    "releaseDate": "02/07/2023",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "simulation"
+  },
+  {
+    "name": "Super Mario Party",
+    "developer": "Activision",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "11/23/2022",
+    "genre": "Shooter",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "Dragon Age: Inquisition",
+    "developer": "Epic Games",
+    "publisher": "Sega",
+    "releaseDate": "02/26/2023",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Night in the Woods",
+    "developer": "Nintendo",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "09/19/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Uncharted 4: A Thief's End",
+    "developer": "Square Enix",
+    "publisher": "Rockstar Games",
+    "releaseDate": "06/15/2023",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "platformer"
+  },
+  {
+    "name": "Abzû",
+    "developer": "Bungie",
+    "publisher": "CD Projekt",
+    "releaseDate": "02/05/2023",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "adventure"
+  },
+  {
+    "name": "The Sims 3",
+    "developer": "Nintendo",
+    "publisher": "Sega",
+    "releaseDate": "10/31/2022",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Tyranny",
+    "developer": "Gearbox Software",
+    "publisher": "Bandai Namco",
+    "releaseDate": "09/12/2022",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "The Sims",
+    "developer": "Microsoft Studios",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "07/31/2022",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "Batman: Arkham Knight",
+    "developer": "Sega",
+    "publisher": "Rockstar Games",
+    "releaseDate": "02/20/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Dragon Quest XI S: Echoes of an Elusive Age - Definitive Edition",
+    "developer": "Bethesda Softworks",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "01/23/2023",
+    "genre": "RPG",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Abzû",
+    "developer": "Valve Corporation",
+    "publisher": "THQ Nordic",
+    "releaseDate": "02/11/2023",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "Middle-earth: Shadow of Mordor",
+    "developer": "Konami",
+    "publisher": "Konami",
+    "releaseDate": "12/14/2022",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "X-Plane 11",
+    "developer": "Capcom",
+    "publisher": "Nintendo",
+    "releaseDate": "04/14/2023",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Until Dawn",
+    "developer": "Blizzard Entertainment",
+    "publisher": "Konami",
+    "releaseDate": "07/28/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "Sekiro: Shadows Die Twice",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Konami",
+    "releaseDate": "04/08/2023",
+    "genre": "Simulation",
+    "platform": "Xbox One",
+    "tag": "puzzle"
+  },
+  {
+    "name": "God of War",
+    "developer": "Electronic Arts",
+    "publisher": "Square Enix",
+    "releaseDate": "04/03/2023",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Star Wars: Battlefront II",
+    "developer": "Sega",
+    "publisher": "Activision",
+    "releaseDate": "09/15/2022",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Inside",
+    "developer": "Square Enix",
+    "publisher": "Electronic Arts",
+    "releaseDate": "02/27/2023",
+    "genre": "Strategy",
+    "platform": "Xbox One",
+    "tag": "strategy"
+  },
+  {
+    "name": "Gris",
+    "developer": "343 Industries",
+    "publisher": "Bandai Namco",
+    "releaseDate": "08/08/2022",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "racing"
+  },
+  {
+    "name": "Hyper Light Drifter",
+    "developer": "Capcom",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "07/05/2022",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "simulation"
+  },
+  {
+    "name": "Final Fantasy VII Remake",
+    "developer": "CD Projekt Red",
+    "publisher": "2K Games",
+    "releaseDate": "04/18/2023",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Age of Empires II",
+    "developer": "Namco",
+    "publisher": "Activision",
+    "releaseDate": "11/14/2022",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Grand Theft Auto V",
+    "developer": "Namco",
+    "publisher": "Capcom",
+    "releaseDate": "05/18/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Monument Valley",
+    "developer": "CD Projekt Red",
+    "publisher": "Rockstar Games",
+    "releaseDate": "07/06/2022",
+    "genre": "Action",
+    "platform": "Nintendo Switch",
+    "tag": "platformer"
+  },
+  {
+    "name": "The Legend of Zelda: Twilight Princess HD",
+    "developer": "Sega",
+    "publisher": "CD Projekt",
+    "releaseDate": "01/06/2023",
+    "genre": "Simulation",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Flower",
+    "developer": "Nintendo",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "09/28/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "Darkest Dungeon",
+    "developer": "Blizzard Entertainment",
+    "publisher": "CD Projekt",
+    "releaseDate": "11/23/2022",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "The Walking Dead",
+    "developer": "Konami",
+    "publisher": "Capcom",
+    "releaseDate": "05/16/2023",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Disco Elysium",
+    "developer": "Bungie",
+    "publisher": "2K Games",
+    "releaseDate": "10/31/2022",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "adventure"
+  },
+  {
+    "name": "The Talos Principle",
+    "developer": "Bungie",
+    "publisher": "Electronic Arts",
+    "releaseDate": "08/05/2022",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "Pikachu! and Let's Go",
+    "developer": "Capcom",
+    "publisher": "2K Games",
+    "releaseDate": "06/06/2023",
+    "genre": "Adventure",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "League of Legends",
+    "developer": "Namco",
+    "publisher": "THQ Nordic",
+    "releaseDate": "06/18/2022",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "Batman: Arkham Asylum",
+    "developer": "Bungie",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "11/23/2022",
+    "genre": "Shooter",
+    "platform": "Nintendo Switch",
+    "tag": "platformer"
+  },
+  {
+    "name": "Middle-earth: Shadow of Mordor",
+    "developer": "Namco",
+    "publisher": "Konami",
+    "releaseDate": "12/04/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Ori and the Blind Forest",
+    "developer": "Square Enix",
+    "publisher": "Bandai Namco",
+    "releaseDate": "12/15/2022",
+    "genre": "Sports",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "The Last Guardian",
+    "developer": "Bethesda Softworks",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "01/01/2023",
+    "genre": "Adventure",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Pyre",
+    "developer": "Valve Corporation",
+    "publisher": "Konami",
+    "releaseDate": "02/05/2023",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "adventure"
+  },
+  {
+    "name": "Apex Legends",
+    "developer": "Rockstar Games",
+    "publisher": "Sega",
+    "releaseDate": "04/05/2023",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "puzzle"
+  },
+  {
+    "name": "Star Wars: Republic Commando",
+    "developer": "Bethesda Softworks",
+    "publisher": "THQ Nordic",
+    "releaseDate": "08/31/2022",
+    "genre": "Simulation",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "The Sims 4",
+    "developer": "CD Projekt Red",
+    "publisher": "Take-Two Interactive",
+    "releaseDate": "01/27/2023",
+    "genre": "Fighting",
+    "platform": "Nintendo Switch",
+    "tag": "action"
+  },
+  {
+    "name": "Donkey Kong",
+    "developer": "Sega",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "09/21/2022",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "sports"
+  },
+  {
+    "name": "Mass Effect 2",
+    "developer": "Blizzard Entertainment",
+    "publisher": "2K Games",
+    "releaseDate": "03/29/2023",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Runescape",
+    "developer": "Valve Corporation",
+    "publisher": "Electronic Arts",
+    "releaseDate": "12/31/2022",
+    "genre": "Platformer",
+    "platform": "Nintendo Switch",
+    "tag": "simulation"
+  },
+  {
+    "name": "Star Wars: Squadrons",
+    "developer": "Sega",
+    "publisher": "Valve Corporation",
+    "releaseDate": "03/01/2023",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Telltale's Tales from the Borderlands",
+    "developer": "Konami",
+    "publisher": "Nintendo",
+    "releaseDate": "08/12/2022",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "racing"
+  },
+  {
+    "name": "Hyper Light Drifter",
+    "developer": "Epic Games",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "06/27/2022",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Devil May Cry 5",
+    "developer": "Sega",
+    "publisher": "Take-Two Interactive",
+    "releaseDate": "09/11/2022",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Star Wars: Squadrons",
+    "developer": "Bungie",
+    "publisher": "Nintendo",
+    "releaseDate": "01/08/2023",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Civilization VI",
+    "developer": "Electronic Arts",
+    "publisher": "Ubisoft",
+    "releaseDate": "10/18/2022",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "The Talos Principle",
+    "developer": "Valve Corporation",
+    "publisher": "Konami",
+    "releaseDate": "03/10/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "adventure"
+  },
+  {
+    "name": "Braid",
+    "developer": "Rockstar Games",
+    "publisher": "Activision",
+    "releaseDate": "01/31/2023",
+    "genre": "Action",
+    "platform": "Xbox One",
+    "tag": "adventure"
+  },
+  {
+    "name": "Monument Valley",
+    "developer": "Gearbox Software",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "04/04/2023",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Katana Zero",
+    "developer": "Gearbox Software",
+    "publisher": "Devolver Digital",
+    "releaseDate": "02/09/2023",
+    "genre": "Platformer",
+    "platform": "Xbox One",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Civilization VI",
+    "developer": "Bungie",
+    "publisher": "Electronic Arts",
+    "releaseDate": "04/14/2023",
+    "genre": "Action",
+    "platform": "Nintendo Switch",
+    "tag": "strategy"
+  },
+  {
+    "name": "Persona 5",
+    "developer": "Epic Games",
+    "publisher": "Sega",
+    "releaseDate": "05/12/2023",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "action"
+  },
+  {
+    "name": "Darkest Dungeon",
+    "developer": "Ubisoft",
+    "publisher": "2K Games",
+    "releaseDate": "12/20/2022",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Everquest",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Sega",
+    "releaseDate": "10/20/2022",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt - Complete Edition",
+    "developer": "Capcom",
+    "publisher": "Blizzard Entertainment",
+    "releaseDate": "03/03/2023",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Cities: Skylines",
+    "developer": "343 Industries",
+    "publisher": "Ubisoft",
+    "releaseDate": "11/04/2022",
+    "genre": "Sports",
+    "platform": "PlayStation 4",
+    "tag": "shooter"
+  },
+  {
+    "name": "Resident Evil 3",
+    "developer": "Bungie",
+    "publisher": "Bandai Namco",
+    "releaseDate": "05/19/2023",
+    "genre": "RPG",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Animal Crossing: New Horizons",
+    "developer": "Nintendo",
+    "publisher": "Ubisoft",
+    "releaseDate": "11/21/2022",
+    "genre": "Adventure",
+    "platform": "Xbox One",
+    "tag": "adventure"
+  },
+  {
+    "name": "Darkest Dungeon",
+    "developer": "Activision",
+    "publisher": "Sega",
+    "releaseDate": "03/01/2023",
+    "genre": "RPG",
+    "platform": "Xbox One",
+    "tag": "sports"
+  },
+  {
+    "name": "Kentucky Route Zero",
+    "developer": "Ubisoft",
+    "publisher": "Bethesda Softworks",
+    "releaseDate": "05/12/2023",
+    "genre": "Simulation",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Assassin's Creed Valhalla",
+    "developer": "Electronic Arts",
+    "publisher": "Capcom",
+    "releaseDate": "12/22/2022",
+    "genre": "Sports",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  },
+  {
+    "name": "Portal",
+    "developer": "Valve Corporation",
+    "publisher": "Sony Interactive Entertainment",
+    "releaseDate": "06/02/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "The Stanley Parable",
+    "developer": "CD Projekt Red",
+    "publisher": "Activision",
+    "releaseDate": "12/30/2022",
+    "genre": "Sports",
+    "platform": "Xbox One",
+    "tag": "simulation"
+  },
+  {
+    "name": "Resident Evil 2",
+    "developer": "343 Industries",
+    "publisher": "Konami",
+    "releaseDate": "02/09/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Total War: Shogun 2",
+    "developer": "Capcom",
+    "publisher": "Konami",
+    "releaseDate": "10/19/2022",
+    "genre": "Strategy",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Dark Souls III",
+    "developer": "343 Industries",
+    "publisher": "Microsoft Studios",
+    "releaseDate": "01/15/2023",
+    "genre": "Platformer",
+    "platform": "PlayStation 4",
+    "tag": "sports"
+  },
+  {
+    "name": "Animal Crossing: New Horizons",
+    "developer": "Gearbox Software",
+    "publisher": "Bandai Namco",
+    "releaseDate": "04/07/2023",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "platformer"
+  },
+  {
+    "name": "Wasteland 3",
+    "developer": "Bungie",
+    "publisher": "2K Games",
+    "releaseDate": "10/19/2022",
+    "genre": "Shooter",
+    "platform": "Xbox One",
+    "tag": "shooter"
+  },
+  {
+    "name": "The Walking Dead",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Capcom",
+    "releaseDate": "10/30/2022",
+    "genre": "Shooter",
+    "platform": "PlayStation 4",
+    "tag": "platformer"
+  },
+  {
+    "name": "Super Smash Bros. Ultimate",
+    "developer": "Bethesda Softworks",
+    "publisher": "Square Enix",
+    "releaseDate": "10/06/2022",
+    "genre": "Strategy",
+    "platform": "PlayStation 4",
+    "tag": "action"
+  },
+  {
+    "name": "Dota 2",
+    "developer": "Ubisoft",
+    "publisher": "Konami",
+    "releaseDate": "07/05/2022",
+    "genre": "Action",
+    "platform": "Xbox One",
+    "tag": "racing"
+  },
+  {
+    "name": "Star Wars: The Old Republic",
+    "developer": "Capcom",
+    "publisher": "Konami",
+    "releaseDate": "09/26/2022",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Guild Wars 2",
+    "developer": "Konami",
+    "publisher": "Take-Two Interactive",
+    "releaseDate": "05/25/2023",
+    "genre": "Action",
+    "platform": "PlayStation 4",
+    "tag": "role-playing"
+  },
+  {
+    "name": "Pokémon Mystery Dungeon: Rescue Team DX",
+    "developer": "Bethesda Softworks",
+    "publisher": "Bandai Namco",
+    "releaseDate": "06/02/2023",
+    "genre": "Sports",
+    "platform": "Xbox One",
+    "tag": "puzzle"
+  },
+  {
+    "name": "The Sims",
+    "developer": "CD Projekt Red",
+    "publisher": "Valve Corporation",
+    "releaseDate": "06/04/2023",
+    "genre": "Simulation",
+    "platform": "Xbox One",
+    "tag": "racing"
+  },
+  {
+    "name": "Braid",
+    "developer": "CD Projekt Red",
+    "publisher": "Devolver Digital",
+    "releaseDate": "01/31/2023",
+    "genre": "RPG",
+    "platform": "Nintendo Switch",
+    "tag": "racing"
+  },
+  {
+    "name": "Kingdom Hearts III",
+    "developer": "Sony Interactive Entertainment",
+    "publisher": "Ubisoft",
+    "releaseDate": "02/14/2023",
+    "genre": "Fighting",
+    "platform": "Xbox One",
+    "tag": "puzzle"
+  },
+  {
+    "name": "GoldenEye 007",
+    "developer": "Sega",
+    "publisher": "Valve Corporation",
+    "releaseDate": "11/22/2022",
+    "genre": "Adventure",
+    "platform": "Nintendo Switch",
+    "tag": "shooter"
+  }
+]
