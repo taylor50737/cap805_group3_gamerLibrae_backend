@@ -1,75 +1,48 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const fs = require('fs');
-const bodyParser = require('body-parser');
-const app = express();
-
 require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
 const usersRoutes = require('./routes/users-routes');
+const HttpError = require('./models/http-error');
 
 const HTTP_PORT = process.env.PORT || 8080;
 const mongoURI =
   'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority';
-
-const Users = require('./models/Users');
-const Games = require('./models/Games');
-const Reviews = require('./models/Reviews');
-
-mongoose.connect(mongoURI).then(() => console.log('db connected'));
-
-app.use('/api/users', usersRoutes);
-
-const usersData = JSON.parse(fs.readFileSync('./testing_data/Users.json', 'utf-8'));
-const gamesData = JSON.parse(fs.readFileSync('./testing_data/Games.json', 'utf-8'));
-const reviewsData = JSON.parse(fs.readFileSync('./testing_data/Reviews.json', 'utf-8'));
-
-const importUsersData = async () => {
-  try {
-    await Users.create(usersData);
-    console.log('Users data successfully imported');
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
-const importGamesData = async () => {
-  try {
-    await Games.create(gamesData);
-    console.log('Games data successfully imported');
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
-const importReviewsData = async () => {
-  try {
-    await Reviews.create(reviewsData);
-    console.log('Reviews data successfully imported');
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
-const importAllData = async () => {
-  await Promise.all([importUsersData(), importGamesData(), importReviewsData()]);
-
-  // All data import operations completed
-  process.exit();
-};
-
-// Uncomment importAllData() to start import JSON data to MongoDB
-// importAllData();
-
-app.get('/', (req, res) => {
-  res.send({ message: 'Hello 852_code9' });
-});
-
-app.use(express.json());
-app.use(cors());
-
 const OnHttpStart = () => {
   console.log('Server listening on port: ' + HTTP_PORT);
 };
 
-app.listen(HTTP_PORT, OnHttpStart);
+const app = express();
+
+app.use(bodyParser.json());
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+  );
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+  next();
+});
+
+app.use('/api/users', usersRoutes);
+
+app.use((req, res, next) => {
+  const error = new HttpError('Could not find this route.', 404);
+  throw error;
+});
+
+app.use((error, req, res, next) => {
+  if (res.headerSent) {
+    return next(error);
+  }
+  res.status(error.code || 500);
+  res.json({ message: error.message || 'An unknown error occurred!' });
+});
+
+mongoose
+  .connect(mongoURI)
+  .then(() => app.listen(HTTP_PORT, OnHttpStart))
+  .catch((err) => console.log(err));
