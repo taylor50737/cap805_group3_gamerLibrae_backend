@@ -17,6 +17,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// Enabling CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
@@ -27,8 +28,10 @@ app.use((req, res, next) => {
   next();
 });
 
+// Routes Handlers (only change this part)
 app.use('/api/users', usersRoutes);
 
+// Error handlers
 app.use((req, res, next) => {
   const error = new HttpError('Could not find this route.', 404);
   throw error;
@@ -42,6 +45,7 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || 'An unknown error occurred!' });
 });
 
+// Must connect to the DB before starting server
 mongoose
   .connect(mongoURI)
   .then(() => app.listen(HTTP_PORT, OnHttpStart))
