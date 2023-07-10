@@ -8,9 +8,7 @@ const mongoose = require('mongoose');
    If you access req.session.(some attribute), it will automatically look up from mongoDB to look for that value
    */
 const MongoStore = require('connect-mongo');
-const fs = require('fs');
 
-const usersRoutes = require('./routes/users-routes');
 const authRoutes = require('./routes/authRoutes');
 
 const app = express();
@@ -31,16 +29,6 @@ mongoose
 // Middlewares
 app.use(express.json());
 app.use(cors({ credentials: true, origin: true }));
-// Enabling CORS
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-  );
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-  next();
-});
 app.use(
   session({
     name: 'gamerLibrae.sid',
@@ -59,55 +47,7 @@ app.use(
     }),
   }),
 );
-// app.use('/api/users', usersRoutes);
 app.use('/api', authRoutes);
-
-/* import dummy data
-const Users = require('./models/Users');
-const Games = require('./models/Games');
-const Reviews = require('./models/Reviews');
-
-const usersData = JSON.parse(fs.readFileSync('./testing_data/Users.json', 'utf-8'));
-const gamesData = JSON.parse(fs.readFileSync('./testing_data/Games.json', 'utf-8'));
-const reviewsData = JSON.parse(fs.readFileSync('./testing_data/Reviews.json', 'utf-8'));
-
-const importUsersData = async () => {
-  try {
-    await Users.create(usersData);
-    console.log('Users data successfully imported');
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
-const importGamesData = async () => {
-  try {
-    await Games.create(gamesData);
-    console.log('Games data successfully imported');
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
-const importReviewsData = async () => {
-  try {
-    await Reviews.create(reviewsData);
-    console.log('Reviews data successfully imported');
-  } catch (error) {
-    console.log('error', error);
-  }
-};
-
-const importAllData = async () => {
-  await Promise.all([importUsersData(), importGamesData(), importReviewsData()]);
-
-  // All data import operations completed
-  process.exit();
-};
-
-// Uncomment importAllData() to start import JSON data to MongoDB
-// importAllData();
-*/
 
 // 404 not found
 app.get('*', (req, res) => {
