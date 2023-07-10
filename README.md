@@ -2,7 +2,6 @@
 
 This project is about a web application offering authentic game reviews for gamers.
 
-
 ## Getting Started
 
 To get started with the Gamer Librae (Backend) locally, follow these steps:
@@ -32,4 +31,3 @@ Step 4. Start the development server:
 ```
 
 This command will start the development server and you can view the application by navigating to http://localhost:8080 in your browser.
-    
