@@ -40,8 +40,8 @@ router.post(
   '/signup',
   [
     check('email').normalizeEmail().isEmail(),
-    check('userName').isLength({ min: 8 }),
-    check('password').isLength({ min: 8 }),
+    check('userName').isLength({ min: 3 }),
+    check('password').isLength({ min: 3 }),
   ],
   authController.signup,
 );
