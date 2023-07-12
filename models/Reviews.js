@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// TODO (revised review schema)
 const ReviewSchema = new Schema({
   userId: {
     type: Number,

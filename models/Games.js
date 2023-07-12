@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// TODO (revised game schema)
 const GameSchema = new Schema({
   name: {
     type: String,
