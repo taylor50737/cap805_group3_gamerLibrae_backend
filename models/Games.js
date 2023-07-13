@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// TODO (revised game schema)
 const GameSchema = new Schema({
   name: {
     type: String,
@@ -31,6 +32,6 @@ const GameSchema = new Schema({
   },
 });
 
-const Games = mongoose.model("Games", GameSchema);
+const Games = mongoose.model('Games', GameSchema);
 
 module.exports = Games;
