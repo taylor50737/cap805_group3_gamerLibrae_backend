@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // TODO (revised game schema)
-const GameSchema = new Schema({
+const gameSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -30,8 +30,13 @@ const GameSchema = new Schema({
   tag: {
     type: String,
   },
+  reviews: [
+    {
+      type: mongoose.Types.ObjectId,
+      required: true,
+      ref: 'Review',
+    },
+  ],
 });
 
-const Games = mongoose.model('Games', GameSchema);
-
-module.exports = Games;
+module.exports = mongoose.model('Game', gameSchema);
