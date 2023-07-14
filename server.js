@@ -67,7 +67,6 @@ app.use((req, res, next) => {
 
 // Custom routes handler
 app.use('/api/auth', authRoutes);
-// app.use('/api', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/comments', commentsRoutes);
 

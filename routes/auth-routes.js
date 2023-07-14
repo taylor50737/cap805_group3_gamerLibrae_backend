@@ -2,21 +2,11 @@ const express = require('express');
 const { check } = require('express-validator');
 
 const authController = require('../controllers/auth-controllers');
-
+const authMiddleware = require('../middleware/auth-middleware');
 const router = express.Router();
 
-// middleware to require login
-const logInRequired = (req, res, next) => {
-  console.log(req.session.user);
-  if (!req.session.user) {
-    res.status(400).send({ error: 'not logged in yet' });
-    return;
-  }
-  next();
-};
-
 // auth current session
-router.get('/users/me', logInRequired, authController.sendCurrentSession);
+router.get('/users/me', authMiddleware.loginRequired, authController.sendCurrentSession);
 
 // register
 router.post(
@@ -33,6 +23,6 @@ router.post(
 router.post('/session', authController.login);
 
 // logout
-router.delete('/session', logInRequired, authController.logout);
+router.delete('/session', authMiddleware.loginRequired, authController.logout);
 
 module.exports = router;
