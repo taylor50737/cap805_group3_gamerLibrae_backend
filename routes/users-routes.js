@@ -8,4 +8,6 @@ router.get('/', usersController.getUsers);
 
 router.get('/:uid', usersController.getUserById);
 
+// router.post('/affiliation/signup')
+
 module.exports = router;
