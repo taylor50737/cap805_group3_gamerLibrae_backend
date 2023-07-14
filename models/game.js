@@ -23,13 +23,17 @@ const gameSchema = new Schema({
     type: String,
     required: true,
   },
-  platform: {
-    type: String,
-    required: true,
-  },
-  tag: {
-    type: String,
-  },
+  platform: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
+  tag: [
+    {
+      type: String,
+    },
+  ],
   reviews: [
     {
       type: mongoose.Types.ObjectId,
