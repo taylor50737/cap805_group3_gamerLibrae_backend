@@ -12,6 +12,7 @@ const sendCurrentSession = (req, res) => {
     // affiliated: user.joinedAffiliation,
     affiliation: user.affiliation,
     userName: user.userName,
+    userId: user._id
   });
 };
 
@@ -93,7 +94,8 @@ const login = async (req, res) => {
   }
   // need to alter the session to enable express-session sending cookie
   // pick useful properties
-  req.session.user = (({ userName, email, isAdmin, affiliation }) => ({
+  req.session.user = (({ _id, userName, email, isAdmin, affiliation }) => ({
+    _id,
     userName,
     email,
     isAdmin,
