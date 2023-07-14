@@ -12,18 +12,18 @@ const commentSchema = new Schema({
   },
   review: {
     type: mongoose.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: 'Review',
   },
   creator: {
     type: mongoose.Types.ObjectId,
-    required: true,
+    // required: true,
     ref: 'User',
   },
   reports: [
     {
       type: mongoose.Types.ObjectId,
-      required: true,
+      // required: true,
       ref: 'Report',
     },
   ],
