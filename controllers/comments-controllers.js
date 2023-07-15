@@ -48,7 +48,7 @@ const updateCommentById = async (req, res, next) => {
   }
 };
 
-const deleteCommentById = async (req, res, nexy) => {
+const deleteCommentById = async (req, res, next) => {
   const filter = { _id: req.params.cid };
   try {
     let doc = await Comment.findOneAndDelete(filter);
@@ -59,8 +59,20 @@ const deleteCommentById = async (req, res, nexy) => {
   }
 };
 
+const deleteManyCommentById = async (req, res, next) => {
+  const cids = req.body.cids;
+  try {
+    const result = await Comment.deleteMany({ _id: { $in: cids } });
+    res.json(result);
+  } catch (err) {
+    const error = new HttpError('Delete comments failed, please try again.', 500);
+    return next(error);
+  }
+};
+
 exports.getAllComments = getAllComments;
 exports.getCommentById = getCommentById;
 exports.postComment = postComment;
 exports.updateCommentById = updateCommentById;
 exports.deleteCommentById = deleteCommentById;
+exports.deleteManyCommentById = deleteManyCommentById;

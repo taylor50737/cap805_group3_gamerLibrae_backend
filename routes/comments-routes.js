@@ -14,4 +14,6 @@ router.put('/:cid', commentsController.updateCommentById);
 
 router.delete('/:cid', commentsController.deleteCommentById);
 
+router.post('/delete', commentsController.deleteManyCommentById);
+
 module.exports = router;
