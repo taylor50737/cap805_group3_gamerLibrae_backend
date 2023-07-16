@@ -4,7 +4,7 @@ const HttpError = require('../models/http-error');
 const Affiliaiton = require('../models/affiliation');
 const User = require('../models/user');
 const Auth = require('./auth-controllers');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 
 //Only for testing
 const getAllAff = async (req, res, next) => {
@@ -27,7 +27,9 @@ const postAff = async (req, res, next) => {
     return next(new HttpError('Invalid input passed, please check your data.', 422));
   }
 
-  const { affChannelURL, affEmail, userId } = req.body;
+  const { affChannelURL, affEmail } = req.body;
+
+  const userId = req.session.user._id;
 
   let existingAffChannelURL;
   try {
@@ -75,15 +77,23 @@ const postAff = async (req, res, next) => {
     return next(error);
   }
 
-  try {
-    // const sess = await mongoose.startSession();
-    // sess.startTransaction();
-    await createdAffiliation.save();
-    user.affiliation = createdAffiliation;
-    await user.save();
-    // await sess.commitTransaction();
-  } catch (err) {
-    const error = new HttpError('Registration failed, please try again.', 500);
+  if (!user.affiliation.affEmail) {
+    try {
+      const sess = await mongoose.startSession();
+      sess.startTransaction();
+      await createdAffiliation.save({ session: sess });
+      user.affiliation = createdAffiliation;
+      await user.save({ session: sess });
+      await sess.commitTransaction();
+    } catch (err) {
+      const error = new HttpError('Registration failed, please try again.', 500);
+      return next(error);
+    }
+  } else {
+    const error = new HttpError(
+      'This user id has already been registered to the affiliation program.',
+      402,
+    );
     return next(error);
   }
 
