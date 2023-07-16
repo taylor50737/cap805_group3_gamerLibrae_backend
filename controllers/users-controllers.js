@@ -37,8 +37,7 @@ const changeUserInfo = async (req, res, next) => {
     return next(new HttpError('Invalid inputs passed, please check your data.', 422));
   }
   const { userName, url } = req.body;
-  const userId = req.session;
-  console.log(req.session);
+  const userId = req.session.user._id;
 
   let user;
   try {
@@ -49,10 +48,10 @@ const changeUserInfo = async (req, res, next) => {
   }
 
   if (user._id.toString() !== userId) {
-    const error = new HttpError('You are not allowed to change the info of this user.', 401);
+    const error = new HttpError('You are not allowed to change the info of this user', 401);
     return next(error);
   } else if (user.userName === userName) {
-    const error = new HttpError('This username have been used.', 401);
+    const error = new HttpError('Username already exists', 409);
     return next(error);
   }
 
@@ -66,7 +65,7 @@ const changeUserInfo = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(200).json({ user: user.toObject({ getters: true }) });
+  res.status(200).json({ message: 'You have successfully changed your info!' });
 };
 
 exports.getUsers = getUsers;
