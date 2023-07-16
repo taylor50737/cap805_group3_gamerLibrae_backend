@@ -48,7 +48,7 @@ const updateCommentById = async (req, res, next) => {
   }
 };
 
-const deleteCommentById = async (req, res, nexy) => {
+const deleteCommentById = async (req, res, next) => {
   const filter = { _id: req.params.cid };
   try {
     let doc = await Comment.findOneAndDelete(filter);
