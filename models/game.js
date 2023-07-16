@@ -19,21 +19,38 @@ const gameSchema = new Schema({
     type: Date,
     required: true,
   },
-  genre: {
-    type: String,
-    required: true,
-  },
-  platform: [
+  genres: [
     {
       type: String,
       required: true,
     },
   ],
-  tag: [
+  platforms: [
     {
       type: String,
+      required: true,
     },
   ],
+  modes: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
+  tags: [
+    {
+      type: String,
+      required: true,
+    },
+  ],
+  banner: {
+    type: String,
+    required: true,
+  },
+  portrait: {
+    type: String,
+    required: true,
+  },
   reviews: [
     {
       type: mongoose.Types.ObjectId,
