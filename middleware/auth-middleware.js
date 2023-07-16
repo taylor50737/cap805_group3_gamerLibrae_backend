@@ -1,7 +1,7 @@
 // Check user is logged in
 const loginRequired = (req, res, next) => {
   if (!req.session.user) {
-    res.status(400).send({ error: 'not logged in yet' });
+    res.status(400).json({ error: 'not logged in yet' });
     return;
   }
   next();
@@ -10,7 +10,7 @@ const loginRequired = (req, res, next) => {
 // Check user is admin
 const adminRequired = (req, res, next) => {
   if (!req.session.user.isAdmin) {
-    res.status(400).send({ error: 'not admin' });
+    res.status(400).json({ error: 'not admin' });
     return;
   }
   next();

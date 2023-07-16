@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth-routes');
 const usersRoutes = require('./routes/users-routes');
 const commentsRoutes = require('./routes/comments-routes');
+const gamesRoutes = require('./routes/games-routes');
 const cloudinaryRoutes = require('./routes/cloudinary-routes');
 const HttpError = require('./models/http-error');
 
@@ -70,6 +71,7 @@ app.use((req, res, next) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/users', usersRoutes);
 app.use('/api/comments', commentsRoutes);
+app.use('/api/games', gamesRoutes);
 app.use('/api/cloudinary', cloudinaryRoutes);
 
 // 404 not found
