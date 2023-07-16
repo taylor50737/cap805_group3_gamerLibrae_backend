@@ -97,7 +97,7 @@ const postAff = async (req, res, next) => {
     return next(error);
   }
 
-  res.status(201).json({ affiliation: createdAffiliation.toObject({ getters: true }) });
+  res.status(201).json({ message: 'Successful' });
   res.status(201).json({ user: user.toObject({ getters: true }) });
 };
 
