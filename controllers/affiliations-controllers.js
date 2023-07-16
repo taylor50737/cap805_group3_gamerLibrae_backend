@@ -6,6 +6,7 @@ const User = require('../models/user');
 const Auth = require('./auth-controllers');
 const { default: mongoose } = require('mongoose');
 
+//Only for testing
 const getAllAff = async (req, res, next) => {
   let affiliations;
   try {
@@ -18,6 +19,7 @@ const getAllAff = async (req, res, next) => {
     affiliations: affiliations.map((affiliation) => affiliation.toObject({ getters: true })),
   });
 };
+//
 
 const postAff = async (req, res, next) => {
   const errors = validationResult(req);
@@ -89,6 +91,7 @@ const postAff = async (req, res, next) => {
   res.status(201).json({ user: user.toObject({ getters: true }) });
 };
 
+//Only for testing
 const deleteAffiliationById = async (req, res, next) => {
   const filter = { _id: req.params.affid };
   try {
@@ -99,6 +102,7 @@ const deleteAffiliationById = async (req, res, next) => {
     return next(error);
   }
 };
+//
 
 exports.getAllAff = getAllAff;
 exports.postAff = postAff;
