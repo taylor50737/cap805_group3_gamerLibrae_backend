@@ -13,7 +13,7 @@ router.get('/:uid', usersController.getUserById);
 router.patch(
   '/change-info',
   authMiddleware.loginRequired,
-  [(check('userName').not().isEmpty(), check('url').isURL())],
+  [check('userName').not().isEmpty(), check('url').isURL()],
   usersController.changeUserInfo,
 );
 
