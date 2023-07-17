@@ -1,3 +1,7 @@
+// Name: Siu Yu CHAU
+// Student ID: 134368224
+// Testing Authentication
+
 const request = require('supertest');
 const mongoose = require('mongoose');
 
