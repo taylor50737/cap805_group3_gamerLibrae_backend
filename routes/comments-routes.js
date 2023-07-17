@@ -8,11 +8,11 @@ router.get('/', commentsController.getAllComments);
 
 router.get('/:cid', commentsController.getCommentById);
 
+router.delete('/:cid', commentsController.deleteCommentById);
+
 router.post('/', commentsController.postComment);
 
 router.put('/:cid', commentsController.updateCommentById);
-
-router.delete('/:cid', commentsController.deleteCommentById);
 
 router.post('/delete', commentsController.deleteManyCommentById);
 
