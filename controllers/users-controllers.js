@@ -19,7 +19,7 @@ const getUserById = async (req, res, next) => {
   try {
     user = await User.findById(userId);
   } catch (err) {
-    const error = new HttpError('Something went wrong, could not find the user.', 500);
+    const error = new HttpError('Something went wrong1, could not find the user.', 500);
     return next(error);
   }
 
@@ -50,7 +50,17 @@ const changeUserInfo = async (req, res, next) => {
   if (user._id.toString() !== userId) {
     const error = new HttpError('You are not allowed to change the info of this user', 401);
     return next(error);
-  } else if (user.userName === userName) {
+  }
+
+  let existingUsername;
+  try {
+    existingUsername = await User.findOne({ userName: userName });
+  } catch (err) {
+    const error = new HttpError('Signing up failed, please try again later.', 500);
+    return next(error);
+  }
+
+  if (existingUsername) {
     const error = new HttpError('Username already exists', 409);
     return next(error);
   }
