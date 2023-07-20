@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo');
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const qs = require('qs');
 
 const HttpError = require('./models/http-error');
 
@@ -23,6 +24,16 @@ const mongoURI =
   'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority'; // env
 
 const app = express();
+
+// Comma seperated query parameter convert to array
+app.set('query parser', function (str) {
+  // Remove trailing comma
+  str = decodeURIComponent(str)
+    .split('&')
+    .map((p) => p.replace(/,+$/, ''))
+    .join('&');
+  return qs.parse(str, { comma: true });
+});
 
 app.use(bodyParser.json());
 

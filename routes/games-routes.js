@@ -3,10 +3,11 @@ const { body } = require('express-validator');
 const express = require('express');
 const router = express.Router();
 
-const postGameController = require('../controllers/games-controller');
+const gamesController = require('../controllers/games-controller');
 const { loginRequired, adminRequired } = require('../middleware/auth-middleware');
 const { validateImageSignature } = require('../middleware/games-middleware');
 
+// Add a game
 router.post(
   '/',
   loginRequired,
@@ -24,7 +25,10 @@ router.post(
     body('portraitResBody').notEmpty(),
   ],
   validateImageSignature,
-  postGameController.postGame,
+  gamesController.postGame,
 );
+
+// Get games with queries as filter
+router.get('/', gamesController.getGames);
 
 module.exports = router;
