@@ -35,4 +35,93 @@ const postGame = async (req, res) => {
   res.status(201).json({ message: 'Create game successed' });
 };
 
+const getGames = async (req, res) => {
+  let {
+    name,
+    genres,
+    platforms,
+    modes,
+    tags,
+    releaseDate,
+    score,
+    page = 0,
+    limit = 10,
+  } = req.query;
+  page = parseInt(page);
+  limit = parseInt(limit);
+  console.log(releaseDate);
+  // // Make sure if single value is passed, filter's $all still work
+  const toArray = (o) => (Array.isArray(o) ? o : [o]);
+
+  // Build a filter
+  let filter = {};
+  if (name) {
+    filter.name = { $regex: name, $options: 'i' }; // case insensitive
+  }
+  if (genres) {
+    filter.genres = { $all: toArray(genres) };
+  }
+  if (platforms) {
+    filter.platforms = { $all: toArray(platforms) };
+  }
+  if (modes) {
+    filter.modes = { $all: toArray(modes) };
+  }
+  if (tags) {
+    filter.tags = { $all: toArray(tags) };
+  }
+  if (releaseDate) {
+    filter.releaseDate = {};
+    releaseDate = toArray(releaseDate);
+    const from = parseInt(releaseDate[0]);
+    const to = parseInt(releaseDate[1]);
+    if (from) {
+      filter.releaseDate.$gte = new Date(from, 0, 1); // start of year
+    }
+    if (to) {
+      filter.releaseDate.$lte = new Date(to, 11, 31); // end of year
+    }
+  }
+  if (score) {
+    filter.score = {};
+    score = toArray(score);
+    const from = parseInt(score[0]);
+    const to = parseInt(score[1]);
+    if (from) {
+      filter.score.$gte = from;
+    }
+    if (to) {
+      filter.score.$lte = to;
+    }
+  }
+
+  let matchedGames;
+  try {
+    matchedGames = await Game.aggregate()
+      .lookup({
+        from: 'reviews',
+        localField: 'reviews',
+        foreignField: '_id',
+        as: 'tempReviews',
+      })
+      .addFields({ score: { $avg: '$tempReviews.rating' } })
+      .project({
+        tempReviews: 0,
+        reviews: 0,
+        __v: 0,
+      })
+      .match(filter)
+      .skip(page * limit)
+      .limit(limit)
+      .sort({ name: 1 })
+      .exec();
+  } catch (err) {
+    console.log(err);
+    // Just send nothing if params is not correctly input
+    return res.send([]);
+  }
+  return res.send(matchedGames);
+};
+
 exports.postGame = postGame;
+exports.getGames = getGames;
