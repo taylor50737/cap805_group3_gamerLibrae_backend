@@ -47,13 +47,13 @@ app.use(
     saveUninitialized: false,
     cookie: {
       // secure: true,  // uncomment this in production, need to change server to https
-      maxAge: 5 * 60 * 1000, // 5 mnis
+      maxAge: 4 * 60 * 60 * 1000, // 4 hours
     },
     store: MongoStore.create({
       mongoUrl: mongoURI,
       dbName: 'testSession',
       collectionName: 'sessions',
-      ttl: 5 * 60, // destroy session in server after 5 mins of creation
+      ttl: 4 * 60 * 60, // destroy session in server after 4 hours of creation
     }),
   }),
 );
