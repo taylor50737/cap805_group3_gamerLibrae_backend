@@ -123,5 +123,32 @@ const getGames = async (req, res) => {
   return res.send(matchedGames);
 };
 
+const getGame = async (req, res) => {
+  const gameId = req.params.gid;
+  let matchedGames;
+  try {
+    matchedGames = await Game.aggregate()
+      .lookup({
+        from: 'reviews',
+        localField: 'reviews',
+        foreignField: '_id',
+        as: 'tempReviews',
+      })
+      .addFields({ score: { $avg: '$tempReviews.rating' } })
+      .project({
+        tempReviews: 0,
+        __v: 0,
+      })
+      .match({ _id: new mongoose.Types.ObjectId(gameId) })
+      .exec();
+  } catch (err) {
+    console.log(err);
+    // Just send nothing if params is not correctly input
+    return res.send({});
+  }
+  return res.send(matchedGames.length === 1 ? matchedGames[0] : {});
+};
+
 exports.postGame = postGame;
 exports.getGames = getGames;
+exports.getGame = getGame;
