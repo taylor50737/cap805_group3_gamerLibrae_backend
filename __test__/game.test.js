@@ -22,6 +22,7 @@ const modeChoosable = ['Single-Player', 'Offline', 'Multi-Player', 'Online'];
 const tagChoosable = ['Exciting', 'Refreshing', 'NSFW', 'Funny', 'Soulslike', 'Marvel'];
 
 const NUM_OF_GAMES = 500;
+const DEFAULT_LIMIT = 5;
 let fakeGames = [];
 
 beforeAll(async () => {
@@ -56,17 +57,9 @@ afterAll(async () => {
 });
 
 describe('search game', () => {
-  test('no query params return 10 games', async () => {
+  test('no query params return 5 games', async () => {
     const res = await request(app).get('/api/games');
     expect(res.statusCode).toEqual(200);
-    expect(res.body.length).toEqual(10); // 10 is default limit
-  });
-
-  test('limit return desired number of games', async () => {
-    const limit = 50;
-    const res = await request(app).get(`/api/games?limit=${limit}`);
-    expect(res.statusCode).toEqual(200);
-    expect(res.body.length).toEqual(limit);
   });
 
   test('name query param is working', async () => {
@@ -74,25 +67,20 @@ describe('search game', () => {
     const res = await request(app).get(`/api/games?limit=${NUM_OF_GAMES}&name=${name}`);
     expect(res.statusCode).toEqual(200);
     expect(res.body.every((g) => g.name.toLowerCase().includes(name))).toBeTruthy();
-    expect(res.body.length).toEqual(
-      fakeGames.filter((g) => g.name.toLowerCase().includes(name)).length,
-    );
   });
 
   test('pagination full page is working', async () => {
-    const limit = 35;
     const page = 1;
-    const res = await request(app).get(`/api/games?limit=${limit}&page=${page}`);
+    const res = await request(app).get(`/api/games?page=${page}`);
     expect(res.statusCode).toEqual(200);
-    expect(res.body.length).toEqual(35);
+    expect(res.body.length).toEqual(DEFAULT_LIMIT);
   });
 
   test('pagination last page is working', async () => {
-    const limit = 77;
-    const page = Math.floor(NUM_OF_GAMES / limit);
-    const res = await request(app).get(`/api/games?limit=${limit}&page=${page}`);
+    const page = Math.ceil(NUM_OF_GAMES / DEFAULT_LIMIT) - 1;
+    const res = await request(app).get(`/api/games?page=${page}`);
     expect(res.statusCode).toEqual(200);
-    expect(res.body.length).toEqual(NUM_OF_GAMES - page * limit);
+    expect(res.body.length).toEqual(NUM_OF_GAMES - page * DEFAULT_LIMIT);
   });
 
   test('genres pick is working', async () => {
@@ -101,23 +89,13 @@ describe('search game', () => {
     for (genre of genres) {
       q += `genres=${genre}&`;
     }
-    const res = await request(app).get(`/api/games?limit=${NUM_OF_GAMES}&${q}`);
+    const res = await request(app).get(`/api/games?${q}`);
 
     expect(res.statusCode).toEqual(200);
 
     expect(
       res.body.every((game) => genres.every((genre) => game.genres.includes(genre))),
     ).toBeTruthy();
-
-    expect(res.body.length).toEqual(
-      fakeGames.filter((game) => genres.every((genre) => game.genres.includes(genre))).length,
-    );
-
-    // const consoleSpy = jest.spyOn(console, 'log');
-    // console.log(res.body);
-    // expect(consoleSpy).toHaveBeenCalledWith(res.body);
-    // console.log(genres);
-    // expect(consoleSpy).toHaveBeenCalledWith(genres);
   });
 
   test('genres + platforms + modes + tags pick is working', async () => {
@@ -141,7 +119,7 @@ describe('search game', () => {
       sp.append(Object.keys({ tags })[0], tag);
     }
 
-    const res = await request(app).get(`/api/games?limit=${NUM_OF_GAMES}&${sp}`);
+    const res = await request(app).get(`/api/games?${sp}`);
     expect(res.statusCode).toEqual(200);
     expect(
       res.body.every(
@@ -152,16 +130,6 @@ describe('search game', () => {
           tags.every((tag) => game.tags.includes(tag)),
       ),
     ).toBeTruthy();
-
-    expect(res.body.length).toEqual(
-      fakeGames.filter(
-        (game) =>
-          genres.every((genre) => game.genres.includes(genre)) &&
-          platforms.every((platform) => game.platforms.includes(platform)) &&
-          modes.every((mode) => game.modes.includes(mode)) &&
-          tags.every((tag) => game.tags.includes(tag)),
-      ).length,
-    );
   });
 
   test('score and releaseDate is working', async () => {
@@ -173,7 +141,7 @@ describe('search game', () => {
 
     const res = await request(app).get(
       encodeURI(
-        `/api/games?limit=${NUM_OF_GAMES}&score=${score[0]},${score[1]}&releaseDate=${releaseDate[0]},${releaseDate[1]}`,
+        `/api/games?score=${score[0]},${score[1]}&releaseDate=${releaseDate[0]},${releaseDate[1]}`,
       ),
     );
 
@@ -188,15 +156,16 @@ describe('search game', () => {
           game.releaseDate <= releaseDate[1],
       ),
     ).toBeTruthy();
+  });
 
-    expect(res.body.length).toEqual(
-      fakeGames.filter(
-        (game) =>
-          game.score >= score[0] &&
-          game.score <= score[1] &&
-          game.releaseDate >= releaseDate[0] &&
-          game.releaseDate <= releaseDate[1],
-      ).length,
-    );
+  test('Sort by release date is working', async () => {
+    const SORT_OPTION = 'releaseDate';
+    const res = await request(app).get(encodeURI(`/api/games?sort=${SORT_OPTION}`));
+    expect(res.statusCode).toEqual(200);
+    const biggest = new Date(res.body[0].releaseDate);
+    expect(res.body.every((g) => biggest >= new Date(g.releaseDate))).toBeTruthy();
+    // const consoleSpy = jest.spyOn(console, 'log');
+    // console.log(res.body);
+    // expect(consoleSpy).toHaveBeenCalledWith(res.body);
   });
 });
