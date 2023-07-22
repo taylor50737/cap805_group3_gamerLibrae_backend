@@ -36,20 +36,10 @@ const postGame = async (req, res) => {
 };
 
 const getGames = async (req, res) => {
-  let {
-    name,
-    genres,
-    platforms,
-    modes,
-    tags,
-    releaseDate,
-    score,
-    page = 0,
-    limit = 10,
-  } = req.query;
-  page = parseInt(page);
-  limit = parseInt(limit);
-  console.log(releaseDate);
+  let { name, genres, platforms, modes, tags, releaseDate, score, page = 0, sort } = req.query;
+  const LIMIT = 5; // Limit for returned items
+  page = parseInt(page >= 0 ? page : 0);
+
   // // Make sure if single value is passed, filter's $all still work
   const toArray = (o) => (Array.isArray(o) ? o : [o]);
 
@@ -95,9 +85,11 @@ const getGames = async (req, res) => {
     }
   }
 
-  let matchedGames;
+  let matchGamesLimited;
+  let matchCount;
   try {
-    matchedGames = await Game.aggregate()
+    // I don't have a better solution other than running 2 queries :(
+    await Game.aggregate()
       .lookup({
         from: 'reviews',
         localField: 'reviews',
@@ -111,16 +103,43 @@ const getGames = async (req, res) => {
         __v: 0,
       })
       .match(filter)
-      .skip(page * limit)
-      .limit(limit)
-      .sort({ name: 1 })
+      .then((res) => {
+        matchCount = res.length;
+      });
+
+    const sortParam = {};
+    sortParam[sort] = -1;
+
+    matchGamesLimited = await Game.aggregate()
+      .lookup({
+        from: 'reviews',
+        localField: 'reviews',
+        foreignField: '_id',
+        as: 'tempReviews',
+      })
+      .addFields({ score: { $avg: '$tempReviews.rating' } })
+      .project({
+        tempReviews: 0,
+        reviews: 0,
+        __v: 0,
+      })
+      .match(filter)
+      .sort(sortParam)
+      .skip(page * LIMIT)
+      .limit(LIMIT)
       .exec();
   } catch (err) {
     console.log(err);
     // Just send nothing if params is not correctly input
     return res.send([]);
   }
-  return res.send(matchedGames);
+  // Set pagination metadata in header for front-end to do pagination
+  res.set({ 'Pagination-Count': matchCount, 'Pagination-Page': page, 'Pagination-Limit': LIMIT });
+  res.set({
+    'Access-Control-Expose-Headers': ['Pagination-Count', 'Pagination-Page', 'Pagination-Limit'],
+  });
+
+  return res.send(matchGamesLimited);
 };
 
 const getGame = async (req, res) => {
