@@ -151,12 +151,12 @@ const getGame = async (req, res) => {
         from: 'reviews',
         localField: 'reviews',
         foreignField: '_id',
-        as: 'tempReviews',
+        as: 'reviews',
       })
       .addFields({ score: { $avg: '$tempReviews.rating' } })
       .project({
-        tempReviews: 0,
         __v: 0,
+        reviews: { __v: 0 },
       })
       .match({ _id: new mongoose.Types.ObjectId(gameId) })
       .exec();

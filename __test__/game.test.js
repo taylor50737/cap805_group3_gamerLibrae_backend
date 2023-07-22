@@ -56,7 +56,7 @@ afterAll(async () => {
   await Game.deleteMany({});
 });
 
-describe('search game', () => {
+describe('search games by filter', () => {
   test('no query params return 5 games', async () => {
     const res = await request(app).get('/api/games');
     expect(res.statusCode).toEqual(200);
@@ -158,7 +158,7 @@ describe('search game', () => {
     ).toBeTruthy();
   });
 
-  test('Sort by release date is working', async () => {
+  test('sort by release date is working', async () => {
     const SORT_OPTION = 'releaseDate';
     const res = await request(app).get(encodeURI(`/api/games?sort=${SORT_OPTION}`));
     expect(res.statusCode).toEqual(200);
@@ -167,5 +167,19 @@ describe('search game', () => {
     // const consoleSpy = jest.spyOn(console, 'log');
     // console.log(res.body);
     // expect(consoleSpy).toHaveBeenCalledWith(res.body);
+  });
+});
+
+describe('search game by id', () => {
+  test('Test', async () => {
+    const gameNum = Math.round(Math.random() * NUM_OF_GAMES);
+    const gameResByNameRes = await request(app).get(
+      encodeURI(`/api/games?name=${fakeGames[gameNum].name}`),
+    );
+    const gameResById = await request(app).get(
+      encodeURI(`/api/games/${gameResByNameRes.body[0]._id}`),
+    );
+    expect(gameResById.statusCode).toEqual(200);
+    expect(gameResById.body.name === fakeGames[gameNum].name).toBeTruthy();
   });
 });
