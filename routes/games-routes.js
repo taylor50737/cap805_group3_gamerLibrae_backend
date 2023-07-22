@@ -31,4 +31,7 @@ router.post(
 // Get games with queries as filter
 router.get('/', gamesController.getGames);
 
+// Get a game with id
+router.get('/:gid', gamesController.getGame);
+
 module.exports = router;
