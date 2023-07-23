@@ -143,7 +143,10 @@ const getGames = async (req, res) => {
 };
 
 const getGame = async (req, res) => {
-  const gameId = req.params.gid;
+  const gameId = req.params.id;
+  if (!mongoose.Types.ObjectId.isValid(gameId)) {
+    return res.send({});
+  }
   let matchedGames;
   try {
     matchedGames = await Game.aggregate()

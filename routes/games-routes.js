@@ -32,6 +32,6 @@ router.post(
 router.get('/', gamesController.getGames);
 
 // Get a game with id
-router.get('/:gid', gamesController.getGame);
+router.get('/:id', gamesController.getGame);
 
 module.exports = router;
