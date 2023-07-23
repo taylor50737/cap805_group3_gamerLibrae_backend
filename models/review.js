@@ -33,6 +33,10 @@ const reviewSchema = new Schema({
     required: true,
     ref: 'User',
   },
+  vote: {
+    type: Number,
+    required: true,
+  },
   comments: [
     {
       type: mongoose.Types.ObjectId,
