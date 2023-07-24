@@ -32,7 +32,7 @@ const postGame = async (req, res) => {
     const error = new HttpError('Create game failed', 500);
     return next(error);
   }
-  res.status(201).json({ message: 'Create game successed' });
+  res.status(201).json({ message: 'Create game succeed' });
 };
 
 const getGames = async (req, res) => {
@@ -143,7 +143,10 @@ const getGames = async (req, res) => {
 };
 
 const getGame = async (req, res) => {
-  const gameId = req.params.gid;
+  const gameId = req.params.id;
+  if (!mongoose.Types.ObjectId.isValid(gameId)) {
+    return res.send({});
+  }
   let matchedGames;
   try {
     matchedGames = await Game.aggregate()

@@ -19,6 +19,7 @@ const commentsRoutes = require('./routes/comments-routes');
 const gamesRoutes = require('./routes/games-routes');
 const cloudinaryRoutes = require('./routes/cloudinary-routes');
 const affiliationRoutes = require('./routes/affiliation-routes');
+const reviewsRoutes = require('./routes/reviews-routes');
 
 const mongoURI =
   'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority'; // env
@@ -81,6 +82,7 @@ app.use('/api/comments', commentsRoutes);
 app.use('/api/games', gamesRoutes);
 app.use('/api/cloudinary', cloudinaryRoutes);
 app.use('/api/affiliations', affiliationRoutes);
+app.use('/api/reviews', reviewsRoutes);
 
 // 404 not found
 app.use((req, res, next) => {

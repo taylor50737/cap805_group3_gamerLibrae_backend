@@ -15,7 +15,7 @@ beforeAll(async () => {
   await mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: 'testSession', // change to test db in .env
+    dbName: '__testAuth__', // change to test db in .env
   });
 
   const bcrypt = require('bcrypt');
@@ -36,6 +36,7 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await User.deleteOne({ email: 'existing_user@test.com' });
+  await mongoose.connection.db.dropDatabase();
   await mongoose.connection.close();
 });
 
