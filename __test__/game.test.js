@@ -29,7 +29,7 @@ beforeAll(async () => {
   await mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    dbName: '__test__', // change to test db in .env
+    dbName: '__testGame__', // change to test db in .env
   });
 
   for (let i = 0; i < NUM_OF_GAMES; i++) {
@@ -54,6 +54,8 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await Game.deleteMany({});
+  await mongoose.connection.db.dropDatabase();
+  await mongoose.connection.close();
 });
 
 describe('search games by filter', () => {
@@ -171,7 +173,7 @@ describe('search games by filter', () => {
 });
 
 describe('search game by id', () => {
-  test('Test', async () => {
+  test('search game by id is working', async () => {
     const gameNum = Math.round(Math.random() * NUM_OF_GAMES);
     const gameResByNameRes = await request(app).get(
       encodeURI(`/api/games?name=${fakeGames[gameNum].name}`),
