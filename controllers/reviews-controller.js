@@ -35,14 +35,15 @@ const getReview = async (req, res) => {
   return res.send(matchedReview.length === 1 ? matchedReview[0] : {});
 };
 
-const postReview = async (req, res) => {
+const postReview = async (req, res, next) => {
   const { rating, title, content, gameId } = req.body;
+  console.log(`${rating} ${title} ${gameId} ${content}`);
   if (!mongoose.Types.ObjectId.isValid(gameId)) {
     return res.send({});
   }
   const review = new Review({
     rating: rating,
-    title: title,
+    title: title ? title : '(No title)',
     content: content,
     postingDate: new Date(),
     status: 'public',
