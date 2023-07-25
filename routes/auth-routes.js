@@ -25,4 +25,16 @@ router.post('/session', authController.login);
 // logout
 router.delete('/session', authMiddleware.loginRequired, authController.logout);
 
+// forgot pw
+router.post(
+  '/forgot-password',
+  [check('email').normalizeEmail().isEmail()],
+  authController.forgotPassword,
+);
+
+router.post(
+  '/reset-password/:uid/:token',
+  authController.resetPassword,
+);
+
 module.exports = router;
