@@ -9,6 +9,7 @@ const MongoStore = require('connect-mongo');
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const qs = require('qs');
 
 const HttpError = require('./models/http-error');
 
@@ -18,11 +19,22 @@ const commentsRoutes = require('./routes/comments-routes');
 const gamesRoutes = require('./routes/games-routes');
 const cloudinaryRoutes = require('./routes/cloudinary-routes');
 const affiliationRoutes = require('./routes/affiliation-routes');
+const reviewsRoutes = require('./routes/reviews-routes');
 
 const mongoURI =
   'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority'; // env
 
 const app = express();
+
+// Comma seperated query parameter convert to array
+app.set('query parser', function (str) {
+  // Remove trailing comma
+  str = decodeURIComponent(str)
+    .split('&')
+    .map((p) => p.replace(/,+$/, ''))
+    .join('&');
+  return qs.parse(str, { comma: true });
+});
 
 app.use(bodyParser.json());
 
@@ -36,13 +48,13 @@ app.use(
     saveUninitialized: false,
     cookie: {
       // secure: true,  // uncomment this in production, need to change server to https
-      maxAge: 5 * 60 * 1000, // 5 mnis
+      maxAge: 4 * 60 * 60 * 1000, // 4 hours
     },
     store: MongoStore.create({
       mongoUrl: mongoURI,
       dbName: 'testSession',
       collectionName: 'sessions',
-      ttl: 5 * 60, // destroy session in server after 5 mins of creation
+      ttl: 4 * 60 * 60, // destroy session in server after 4 hours of creation
     }),
   }),
 );
@@ -70,6 +82,7 @@ app.use('/api/comments', commentsRoutes);
 app.use('/api/games', gamesRoutes);
 app.use('/api/cloudinary', cloudinaryRoutes);
 app.use('/api/affiliations', affiliationRoutes);
+app.use('/api/reviews', reviewsRoutes);
 
 // 404 not found
 app.use((req, res, next) => {
