@@ -156,7 +156,7 @@ const forgotPassword = async (req, res, next) => {
   const mailOptions = {
     from: process.env.EMAIL,
     to: email,
-    subject: 'Test Reset Password',
+    subject: 'Reset Password',
     text: link,
   };
 
