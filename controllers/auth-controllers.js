@@ -137,13 +137,13 @@ const forgotPassword = async (req, res, next) => {
     return next(error);
   }
 
-  const secretKey = existingUser._id + 'testing';
+  const secretKey = existingUser._id + process.env.JWT_KEY;
 
   const token = jwt.sign({ userID: existingUser._id }, secretKey, {
     expiresIn: '5m',
   });
 
-  const link = `http://localhost:5173/auth/reset-password/${existingUser._id}/${token}`;
+  const link = `${process.env.FRONTEND_URL}/auth/reset-password/${existingUser._id}/${token}`;
 
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -201,7 +201,7 @@ const resetPassword = async (req, res, next) => {
     return next(error);
   }
   // Verify token
-  const secretKey = user.id + 'testing';
+  const secretKey = user.id + process.env.JWT_KEY;
   try {
     jwt.verify(token, secretKey);
   } catch (err) {
