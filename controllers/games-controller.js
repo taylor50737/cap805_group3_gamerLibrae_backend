@@ -168,7 +168,7 @@ const getGame = async (req, res) => {
         foreignField: '_id',
         as: 'reviews',
       })
-      .addFields({ score: { $avg: '$tempReviews.rating' } })
+      .addFields({ score: { $avg: '$reviews.rating' } })
       .project({
         __v: 0,
         reviews: { __v: 0 },
