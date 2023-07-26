@@ -49,6 +49,8 @@ const getGames = async (req, res) => {
     sort,
   } = req.query;
   page = parseInt(page >= 0 ? page : 0);
+  const tryParseLimit = parseInt(limit);
+  limit = tryParseLimit === NaN ? 5 : tryParseLimit;
 
   // // Make sure if single value is passed, filter's $all still work
   const toArray = (o) => (Array.isArray(o) ? o : [o]);
