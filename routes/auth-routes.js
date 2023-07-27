@@ -35,10 +35,7 @@ router.post(
 // reset pw
 router.post(
   '/reset-password/:uid/:token',
-  [
-    check('newPassword').isLength({ min: 3 }),
-    check('confirmNewPassword').isLength({ min: 3 }),
-  ],
+  [check('newPassword').isLength({ min: 3 }), check('confirmNewPassword').isLength({ min: 3 })],
   authController.resetPassword,
 );
 

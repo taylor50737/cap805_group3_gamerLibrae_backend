@@ -46,6 +46,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
+      sameSite: 'none',
       // secure: true,  // uncomment this in production, need to change server to https
       maxAge: 4 * 60 * 60 * 1000, // 4 hours
     },
