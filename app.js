@@ -48,8 +48,8 @@ app.use(
     saveUninitialized: false,
     cookie: {
       sameSite: 'none',
-      secure: true,
-      // secure: true,  // uncomment this in production, need to change server to https
+      // only set secure in production, https required
+      secure: process.env.DB_NAME === 'testSession' ? false : true,
       maxAge: 4 * 60 * 60 * 1000, // 4 hours
     },
     store: MongoStore.create({
