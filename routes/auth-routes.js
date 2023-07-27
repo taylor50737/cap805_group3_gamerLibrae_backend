@@ -6,7 +6,7 @@ const authMiddleware = require('../middleware/auth-middleware');
 const router = express.Router();
 
 // auth current session
-router.get('/users/me', authController.sendCurrentSession, authMiddleware.loginRequired,);
+router.get('/users/me', authMiddleware.loginRequired, authController.sendCurrentSession);
 
 // register
 router.post(
