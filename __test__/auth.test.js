@@ -8,8 +8,7 @@ const mongoose = require('mongoose');
 const app = require('../app');
 const User = require('../models/user');
 
-const mongoURI =
-  'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority'; // env
+const mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority`;
 
 beforeAll(async () => {
   await mongoose.connect(mongoURI, {

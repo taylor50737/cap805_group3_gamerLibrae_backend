@@ -6,8 +6,7 @@ const Game = require('../models/game');
 const Review = require('../models/review');
 const User = require('../models/user');
 
-const mongoURI =
-  'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority'; // env
+const mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority`;
 
 let fakeGame;
 beforeAll(async () => {
