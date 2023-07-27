@@ -36,6 +36,7 @@ app.set('query parser', function (str) {
 });
 
 app.use(bodyParser.json());
+app.set('trust proxy', 1);
 
 // Middlewares (session)
 app.use(express.json());
