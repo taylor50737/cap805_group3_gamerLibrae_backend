@@ -21,8 +21,7 @@ const cloudinaryRoutes = require('./routes/cloudinary-routes');
 const affiliationRoutes = require('./routes/affiliation-routes');
 const reviewsRoutes = require('./routes/reviews-routes');
 
-const mongoURI =
-  'mongodb+srv://phlo1:kBv3QMUlOCquHua6@senecacap805.nvo6weo.mongodb.net/?retryWrites=true&w=majority'; // env
+const mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@senecacap805.nvo6weo.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
 const app = express();
 
@@ -43,7 +42,7 @@ app.use(express.json());
 app.use(
   session({
     name: 'gamerLibrae.sid',
-    secret: 'key that sign cookie', // env
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -52,7 +51,6 @@ app.use(
     },
     store: MongoStore.create({
       mongoUrl: mongoURI,
-      dbName: 'testSession',
       collectionName: 'sessions',
       ttl: 4 * 60 * 60, // destroy session in server after 4 hours of creation
     }),
