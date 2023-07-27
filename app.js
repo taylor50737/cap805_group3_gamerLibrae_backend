@@ -47,7 +47,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      sameSite: 'none',
+      sameSite: process.env.DB_NAME === 'testSession' ? false : 'none',
       // only set secure in production, https required
       secure: process.env.DB_NAME === 'testSession' ? false : true,
       maxAge: 4 * 60 * 60 * 1000, // 4 hours
