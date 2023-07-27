@@ -36,9 +36,21 @@ const postGame = async (req, res) => {
 };
 
 const getGames = async (req, res) => {
-  let { name, genres, platforms, modes, tags, releaseDate, score, page = 0, sort } = req.query;
-  const LIMIT = 5; // Limit for returned items
+  let {
+    name,
+    genres,
+    platforms,
+    modes,
+    tags,
+    releaseDate,
+    score,
+    page = 0,
+    limit = 5,
+    sort,
+  } = req.query;
   page = parseInt(page >= 0 ? page : 0);
+  const tryParseLimit = parseInt(limit);
+  limit = tryParseLimit === NaN ? 5 : tryParseLimit;
 
   // // Make sure if single value is passed, filter's $all still work
   const toArray = (o) => (Array.isArray(o) ? o : [o]);
@@ -125,8 +137,8 @@ const getGames = async (req, res) => {
       })
       .match(filter)
       .sort(sortParam)
-      .skip(page * LIMIT)
-      .limit(LIMIT)
+      .skip(page * limit)
+      .limit(limit)
       .exec();
   } catch (err) {
     console.log(err);
@@ -134,7 +146,7 @@ const getGames = async (req, res) => {
     return res.send([]);
   }
   // Set pagination metadata in header for front-end to do pagination
-  res.set({ 'Pagination-Count': matchCount, 'Pagination-Page': page, 'Pagination-Limit': LIMIT });
+  res.set({ 'Pagination-Count': matchCount, 'Pagination-Page': page, 'Pagination-Limit': limit });
   res.set({
     'Access-Control-Expose-Headers': ['Pagination-Count', 'Pagination-Page', 'Pagination-Limit'],
   });
@@ -156,7 +168,7 @@ const getGame = async (req, res) => {
         foreignField: '_id',
         as: 'reviews',
       })
-      .addFields({ score: { $avg: '$tempReviews.rating' } })
+      .addFields({ score: { $avg: '$reviews.rating' } })
       .project({
         __v: 0,
         reviews: { __v: 0 },
