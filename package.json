@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "nodemon --exec \"jest --verbose\"",
     "start": "nodemon server.js",
     "prepare": "husky install"
   },
