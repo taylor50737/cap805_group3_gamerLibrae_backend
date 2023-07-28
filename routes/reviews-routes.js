@@ -22,4 +22,7 @@ router.post(
 // Get a review with id
 router.get('/:id', reviewsController.getReview);
 
+// Get a review by user id
+router.get('/user/:uid', reviewsController.getReviewsByUserId)
+
 module.exports = router;

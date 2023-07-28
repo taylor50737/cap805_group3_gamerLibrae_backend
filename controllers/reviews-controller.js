@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const Review = require('../models/review');
 const Game = require('../models/game');
+const User = require('../models/user');
 const HttpError = require('../models/http-error');
 
-const getReview = async (req, res) => {
+const getReview = async (req, res, next) => {
   const reviewId = req.params.id;
 
   const error = new HttpError('Post review failed, please try again.', 500);
@@ -35,8 +36,24 @@ const getReview = async (req, res) => {
   return res.send(matchedReview.length === 1 ? matchedReview[0] : {});
 };
 
+const getReviewsByUserId = async (req, res, next) => {
+  const userId = req.params.uid;
+
+  let userWithReviews;
+  try {
+    userWithReviews = await User.findById(userId).populate('reviews');
+  } catch (err) {
+    const error = new HttpError('Fetching reviews failed, please try again later', 500);
+    return next(error);
+  }
+  res.json({
+    reviews: userWithReviews.reviews.map((review) => review.toObject({ getters: true })),
+  });
+};
+
 const postReview = async (req, res, next) => {
   const { rating, title, content, gameId } = req.body;
+  const userId = req.session.user._id;
   console.log(`${rating} ${title} ${gameId} ${content}`);
   if (!mongoose.Types.ObjectId.isValid(gameId)) {
     return res.send({});
@@ -61,8 +78,35 @@ const postReview = async (req, res, next) => {
     const error = new HttpError('Post review failed, please try again.', 500);
     return next(error);
   }
+
+  // Update reference of reviews in user
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch (err) {
+    const error = new HttpError('User searching operation failed, please try again.', 500);
+    return next(error);
+  }
+
+  if (!user) {
+    const error = new HttpError('Could not find user for this id.', 402);
+    return next(error);
+  }
+
+  try {
+    const sess = await mongoose.startSession();
+    sess.startTransaction();
+    await review.save({ session: sess });
+    user.reviews.push(review);
+    await user.save({ session: sess });
+    await sess.commitTransaction();
+  } catch (err) {
+    const error = new HttpError('Creating review failed, please try again.');
+    return next(error);
+  }
   return res.status(201).send(createdReview);
 };
 
 exports.getReview = getReview;
+exports.getReviewsByUserId = getReviewsByUserId;
 exports.postReview = postReview;
