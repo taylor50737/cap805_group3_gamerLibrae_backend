@@ -14,6 +14,7 @@ const sendCurrentSession = (req, res) => {
     affiliation: user.affiliation,
     userName: user.userName,
     userId: user._id,
+    avatar: user.avatar
   });
 };
 
@@ -62,7 +63,7 @@ const signup = async (req, res, next) => {
     email,
     userName,
     password: hashedPassword,
-    avatar: 'https://robohash.org/etimpeditcorporis.png?size=50x50&set=set1',
+    avatar: 'https://i.pinimg.com/1200x/bc/61/73/bc61734ebf52dbc0a34ef25200a9db29.jpg',
     reviews: [],
     comments: [],
     favouriteGame: [],
@@ -82,7 +83,7 @@ const signup = async (req, res, next) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) {
-    res.status(400).send({ error: 'missing email or password' });
+    res.status(400).send({ error: 'Missing email or password' });
     return;
   }
 
@@ -90,17 +91,18 @@ const login = async (req, res) => {
   const isSamePassword = await bcrypt.compare(password, user ? user.password : '');
 
   if (!user || !isSamePassword) {
-    res.status(409).send({ error: 'incorrect email or password' });
+    res.status(409).send({ error: 'Incorrect email or password' });
     return;
   }
   // need to alter the session to enable express-session sending cookie
   // pick useful properties
-  req.session.user = (({ _id, userName, email, isAdmin, affiliation }) => ({
+  req.session.user = (({ _id, userName, email, isAdmin, affiliation, avatar }) => ({
     _id,
     userName,
     email,
     isAdmin,
     affiliation,
+    avatar,
   }))(user);
   // This is to prevent response is sent before session is saved in database, in this situation the following bug may occur:
   // This bug is hard to reproduce since the time required to save session is unpredictable
