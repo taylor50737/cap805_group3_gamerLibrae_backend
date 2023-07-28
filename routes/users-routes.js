@@ -10,6 +10,8 @@ router.get('/', usersController.getUsers);
 
 router.get('/:uid', usersController.getUserById);
 
+router.get('/wishlist/:uid', usersController.getWishListByUserId)
+
 router.patch(
   '/change-info',
   authMiddleware.loginRequired,
@@ -17,6 +19,6 @@ router.patch(
   usersController.changeUserInfo,
 );
 
-// router.post('/affiliation/signup')
+
 
 module.exports = router;
