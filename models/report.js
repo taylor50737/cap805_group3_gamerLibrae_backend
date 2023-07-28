@@ -12,12 +12,16 @@ const reportSchema = new Schema({
   },
   review: {
     type: mongoose.Types.ObjectId,
-    required: true,
+    required: function () {
+      return !this.comment; // `review` is required if `comment` is not present
+    },
     ref: 'Review',
   },
   comment: {
     type: mongoose.Types.ObjectId,
-    required: true,
+    required: function () {
+      return !this.review; // `comment` is required if `review` is not present
+    },
     ref: 'Comment',
   },
   creator: {

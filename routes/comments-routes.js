@@ -1,4 +1,5 @@
 const express = require('express');
+const { loginRequired } = require('../middleware/auth-middleware');
 
 const commentsController = require('../controllers/comments-controllers');
 
@@ -8,10 +9,10 @@ router.get('/', commentsController.getAllComments);
 
 router.get('/:cid', commentsController.getCommentById);
 
-router.post('/', commentsController.postComment);
+router.post('/', loginRequired, commentsController.postComment);
 
-router.put('/:cid', commentsController.updateCommentById);
+router.put('/:cid', loginRequired, commentsController.updateCommentById);
 
-router.delete('/:cid', commentsController.deleteCommentById);
+router.delete('/:cid', loginRequired, commentsController.deleteCommentById);
 
 module.exports = router;
