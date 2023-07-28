@@ -20,6 +20,7 @@ const gamesRoutes = require('./routes/games-routes');
 const cloudinaryRoutes = require('./routes/cloudinary-routes');
 const affiliationRoutes = require('./routes/affiliation-routes');
 const reviewsRoutes = require('./routes/reviews-routes');
+const reportsRoutes = require('./routes/reports-routes');
 
 const mongoURI = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@senecacap805.nvo6weo.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
 
@@ -47,7 +48,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      sameSite: 'none',
+      sameSite: process.env.DB_NAME === 'testSession' ? false : 'none',
       // only set secure in production, https required
       secure: process.env.DB_NAME === 'testSession' ? false : true,
       maxAge: 4 * 60 * 60 * 1000, // 4 hours
@@ -84,6 +85,7 @@ app.use('/api/games', gamesRoutes);
 app.use('/api/cloudinary', cloudinaryRoutes);
 app.use('/api/affiliations', affiliationRoutes);
 app.use('/api/reviews', reviewsRoutes);
+app.use('/api/reports', reportsRoutes);
 
 // 404 not found
 app.use((req, res, next) => {

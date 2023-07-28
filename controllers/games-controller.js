@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const HttpError = require('../models/http-error');
 const Game = require('../models/game');
+const User = require('../models/user');
 
 const postGame = async (req, res) => {
   const errors = validationResult(req);
@@ -183,6 +184,52 @@ const getGame = async (req, res) => {
   return res.send(matchedGames.length === 1 ? matchedGames[0] : {});
 };
 
+const addGameToWishList = async (req, res, next) => {
+  const { gameId } = req.body;
+  const userId = req.session.user._id;
+
+  let game;
+  try {
+    game = await Game.findById(gameId);
+  } catch (err) {
+    const error = new HttpError('Game searching operation failed, please try again.', 500);
+    return next(error);
+  }
+
+  if (!game) {
+    const error = new HttpError('Could not find game for this id.', 402);
+    return next(error);
+  }
+
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch (err) {
+    const error = new HttpError('User searching operation failed, please try again.', 500);
+    return next(error);
+  }
+
+  if (!user) {
+    const error = new HttpError('Could not find user for this id.', 402);
+    return next(error);
+  }
+
+  try {
+    const sess = await mongoose.startSession();
+    sess.startTransaction();
+    await game.save({ session: sess });
+    user.wishList.push(game);
+    await user.save({ session: sess });
+    await sess.commitTransaction();
+  } catch (err) {
+    const error = new HttpError('Added to wishlist failed, please try again.');
+    return next(error);
+  }
+
+  res.status(200).json({ message: 'You have successfully added your game to wish list!' });
+};
+
 exports.postGame = postGame;
 exports.getGames = getGames;
 exports.getGame = getGame;
+exports.addGameToWishList = addGameToWishList;
