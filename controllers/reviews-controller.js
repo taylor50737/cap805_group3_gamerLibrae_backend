@@ -107,6 +107,19 @@ const postReview = async (req, res, next) => {
   return res.status(201).send(createdReview);
 };
 
+//Get all reviews
+const getAllReviews = async (req, res, next) => {
+  let reviews;
+  try {
+    reviews = await Review.find();
+  } catch (err) {
+    const error = new HttpError('Fetching comments failed, please try again later.', 500);
+    return next(error);
+  }
+  res.json({ reviews: reviews.map((review) => review.toObject({ getters: true })) });
+};
+
 exports.getReview = getReview;
 exports.getReviewsByUserId = getReviewsByUserId;
 exports.postReview = postReview;
+exports.getAllReviews = getAllReviews;

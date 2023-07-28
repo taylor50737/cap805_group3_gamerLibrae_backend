@@ -19,10 +19,13 @@ router.post(
   reviewsController.postReview,
 );
 
+//Get all reviews
+router.get('/', reviewsController.getAllReviews);
+
 // Get a review with id
 router.get('/:id', reviewsController.getReview);
 
 // Get a review by user id
-router.get('/user/:uid', reviewsController.getReviewsByUserId)
+router.get('/user/:uid', reviewsController.getReviewsByUserId);
 
 module.exports = router;
