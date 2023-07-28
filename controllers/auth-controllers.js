@@ -102,8 +102,14 @@ const login = async (req, res) => {
     isAdmin,
     affiliation,
   }))(user);
-  //req.session.regenerate(() => {console.log("regen session")});
-  res.status(200).send({ success: 'successfully logged in' });
+  // This is to prevent response is sent before session is saved in database, in this situation the following bug may occur:
+  // This bug is hard to reproduce since the time required to save session is unpredictable
+  // Send login success and cookies to client => client request auth me with cookies attached
+  // => since session not saved in backend => response 400 => but session actually available shortly after 400 response is sent
+  req.session.save(function (err) {
+    // session saved
+    res.status(200).send({ success: 'successfully logged in' });
+  });
 };
 
 const logout = (req, res) => {
@@ -168,11 +174,9 @@ const forgotPassword = async (req, res, next) => {
     }
   });
 
-  res
-    .status(201)
-    .json({
-      message: 'Password reset instructions have been mailed to the email address you provided.',
-    });
+  res.status(201).json({
+    message: 'Password reset instructions have been mailed to the email address you provided.',
+  });
 };
 
 const resetPassword = async (req, res, next) => {
