@@ -10,7 +10,7 @@ router.get('/', usersController.getUsers);
 
 router.get('/:uid', usersController.getUserById);
 
-router.get('/wishlist/:uid', usersController.getWishListByUserId)
+router.get('/wishlist/:uid', usersController.getWishListByUserId);
 
 router.patch(
   '/change-info',
@@ -19,6 +19,13 @@ router.patch(
   usersController.changeUserInfo,
 );
 
-
+router.patch('/change-password', 
+// authMiddleware.loginRequired, 
+[
+  check('currentPassword').not().isEmpty(),
+  check('newPassword').isLength({ min: 5 }),
+  check('confirmPassword').isLength({ min: 5 }),
+  usersController.changePassword,
+]);
 
 module.exports = router;
