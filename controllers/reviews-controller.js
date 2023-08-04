@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Review = require('../models/review');
 const Game = require('../models/game');
 const User = require('../models/user');
+const Comment = require('../models/comment');
 const HttpError = require('../models/http-error');
 
 const getReview = async (req, res, next) => {
@@ -119,7 +120,32 @@ const getAllReviews = async (req, res, next) => {
   res.json({ reviews: reviews.map((review) => review.toObject({ getters: true })) });
 };
 
+const postComment = async (req, res, next) => {
+  const { content } = req.body;
+  const reviewId = req.params.id;
+  const userId = req.session.user._id;
+
+  const comment = new Comment({
+    content: content,
+    status: 'public',
+    postDate: new Date(),
+    review: new mongoose.Types.ObjectId(reviewId),
+    creator: new mongoose.Types.ObjectId(userId),
+  });
+  let createdComment;
+  try {
+    createdComment = await comment.save();
+    await User.findByIdAndUpdate(userId, { $push: { comments: createdComment._id } });
+    await Review.findByIdAndUpdate(reviewId, { $push: { comments: createdComment._id } });
+  } catch (err) {
+    const error = new HttpError('Post comment failed.', 500);
+    return next(error);
+  }
+  return res.status(201).send(createdComment);
+};
+
 exports.getReview = getReview;
 exports.getReviewsByUserId = getReviewsByUserId;
 exports.postReview = postReview;
 exports.getAllReviews = getAllReviews;
+exports.postComment = postComment;
