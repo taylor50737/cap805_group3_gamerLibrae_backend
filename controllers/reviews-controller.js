@@ -128,6 +128,7 @@ const postComment = async (req, res, next) => {
   const comment = new Comment({
     content: content,
     status: 'public',
+    postDate: new Date(),
     review: new mongoose.Types.ObjectId(reviewId),
     creator: new mongoose.Types.ObjectId(userId),
   });

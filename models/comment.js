@@ -10,6 +10,10 @@ const commentSchema = new Schema({
     type: String,
     required: true,
   },
+  postDate: {
+    type: Date,
+    required: true,
+  },
   review: {
     type: mongoose.Types.ObjectId,
     // required: true,
