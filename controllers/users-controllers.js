@@ -138,7 +138,7 @@ const changePassword = async (req, res, next) => {
     return next(error);
   }
 
-  let isSamePassword; 
+  let isSamePassword;
   try {
     isSamePassword = await bcrypt.compare(currentPassword, user.password);
   } catch (err) {
@@ -148,7 +148,8 @@ const changePassword = async (req, res, next) => {
 
   if (!isSamePassword) {
     const error = new HttpError('Your current password is incorrect', 401);
-    return next(error);  }
+    return next(error);
+  }
 
   let hashedPassword;
   try {
@@ -169,8 +170,41 @@ const changePassword = async (req, res, next) => {
   res.status(200).json({ message: 'You have successfully changed your password!' });
 };
 
+const changeUserProfilePic = async (req, res, next) => {
+  // const errors = validationResult(req);
+  // if (!errors.isEmpty()) {
+  //   return next(new HttpError('Invalid inputs passed, please check your data.', 422));
+  // }
+  const avatar = req.body;
+  const userId = req.session.user._id;
+
+  let user;
+  try {
+    user = await User.findById(userId);
+  } catch (err) {
+    const error = new HttpError('Something went wrong, could not update user', 500);
+    return next(error);
+  }
+
+  if (user._id.toString() !== userId) {
+    const error = new HttpError('You are not allowed to change the info of this user', 401);
+    return next(error);
+  }
+
+  user.avatar = `https://res.cloudinary.com/dpfvhna2t/image/upload/${avatar.avatar}`;
+
+  try {
+    await user.save();
+  } catch (err) {
+    const error = new HttpError('Something went wrong, could not update user.', 500);
+    return next(error);
+  }
+  res.status(200).json({ message: 'You have successfully changed your profile picture!' });
+};
+
 exports.getUsers = getUsers;
 exports.getUserById = getUserById;
 exports.getWishListByUserId = getWishListByUserId;
 exports.changeUserInfo = changeUserInfo;
 exports.changePassword = changePassword;
+exports.changeUserProfilePic = changeUserProfilePic;
