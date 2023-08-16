@@ -1,8 +1,10 @@
 const express = require('express');
-const { check } = require('express-validator');
+const { check, body } = require('express-validator');
 
 const usersController = require('../controllers/users-controllers');
 const authMiddleware = require('../middleware/auth-middleware');
+
+const { validateImageSignature } = require('../middleware/games-middleware');
 
 const router = express.Router();
 
@@ -19,13 +21,22 @@ router.patch(
   usersController.changeUserInfo,
 );
 
-router.patch('/change-password', 
-// authMiddleware.loginRequired, 
-[
-  check('currentPassword').not().isEmpty(),
-  check('newPassword').isLength({ min: 5 }),
-  check('confirmPassword').isLength({ min: 5 }),
-  usersController.changePassword,
-]);
+router.patch(
+  '/change-password',
+  // authMiddleware.loginRequired,
+  [
+    check('currentPassword').not().isEmpty(),
+    check('newPassword').isLength({ min: 5 }),
+    check('confirmPassword').isLength({ min: 5 }),
+    usersController.changePassword,
+  ],
+);
+
+router.patch(
+  '/change-profilepic',
+  authMiddleware.loginRequired,
+  [body('avatar').notEmpty()],
+  usersController.changeUserProfilePic,
+);
 
 module.exports = router;
