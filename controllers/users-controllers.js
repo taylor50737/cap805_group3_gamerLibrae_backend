@@ -36,13 +36,32 @@ const getWishListByUserId = async (req, res, next) => {
   const userId = req.params.uid;
   let userWithWishList;
   try {
-    userWithWishList = await User.findById(userId).populate('wishList');
+    userWithWishList = await User.findById(userId).populate({
+      path: 'wishList',
+      populate: {
+        path: 'reviews',
+        model: 'Review', // Replace 'Review' with your actual review model name
+      },
+    });
   } catch (err) {
     const error = new HttpError('Fetching wish list failed, please try again later', 500);
     return next(error);
   }
+
+  const updatedWishList = userWithWishList.wishList.map((game) => {
+
+    const totalReviews = game.reviews.length;
+    const totalRating = game.reviews.reduce((sum, review) => sum + review.rating, 0);
+    const score = totalReviews > 0 ? totalRating / totalReviews : 0;
+
+    return {
+      ...game.toObject({ getters: true }),
+      score,
+    };
+  });
+
   res.json({
-    wishList: userWithWishList.wishList.map((game) => game.toObject({ getters: true })),
+    wishList: updatedWishList,
   });
 };
 
