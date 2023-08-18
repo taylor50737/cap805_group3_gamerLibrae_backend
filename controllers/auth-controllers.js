@@ -14,7 +14,7 @@ const sendCurrentSession = (req, res) => {
     affiliation: user.affiliation,
     userName: user.userName,
     userId: user._id,
-    avatar: user.avatar
+    avatar: user.avatar,
   });
 };
 
