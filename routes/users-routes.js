@@ -26,8 +26,8 @@ router.patch(
   // authMiddleware.loginRequired,
   [
     check('currentPassword').not().isEmpty(),
-    check('newPassword').isLength({ min: 5 }),
-    check('confirmPassword').isLength({ min: 5 }),
+    check('newPassword').isLength({ min: 8 }),
+    check('confirmPassword').isLength({ min: 8 }),
     usersController.changePassword,
   ],
 );
