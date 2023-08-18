@@ -49,7 +49,6 @@ const getWishListByUserId = async (req, res, next) => {
   }
 
   const updatedWishList = userWithWishList.wishList.map((game) => {
-
     const totalReviews = game.reviews.length;
     const totalRating = game.reviews.reduce((sum, review) => sum + review.rating, 0);
     const score = totalReviews > 0 ? totalRating / totalReviews : 0;
