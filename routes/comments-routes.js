@@ -1,7 +1,7 @@
 const express = require('express');
 
 const commentsController = require('../controllers/comments-controllers');
-const authMiddleware = require('../middleware/auth-middleware');
+const { loginRequired } = require('../middleware/auth-middleware');
 
 const router = express.Router();
 
@@ -9,7 +9,10 @@ router.get('/', commentsController.getAllComments);
 
 router.get('/:cid', commentsController.getCommentById);
 
-router.post('/', commentsController.postComment);
+// Get comments by user id
+router.get('/user/:uid', commentsController.getCommentsByUserId);
+
+router.post('/', loginRequired, commentsController.postComment);
 
 router.put('/:cid', commentsController.updateCommentById);
 

@@ -34,4 +34,7 @@ router.get('/', gamesController.getGames);
 // Get a game with id
 router.get('/:id', gamesController.getGame);
 
+// Add a game to wishlist
+router.patch('/wishlist/:id', loginRequired, gamesController.addGameToWishList);
+
 module.exports = router;

@@ -1,5 +1,6 @@
 const HttpError = require('../models/http-error');
 const Comment = require('../models/comment');
+const User = require('../models/user');
 
 const getAllComments = async (req, res, next) => {
   let comments;
@@ -22,6 +23,30 @@ const getCommentById = async (req, res, next) => {
     return next(error);
   }
   res.json(comment);
+};
+
+const getCommentsByUserId = async (req, res, next) => {
+  const userId = req.params.uid;
+
+  let userWithComments;
+  try {
+    userWithComments = await User.findById(userId).populate({
+      path: 'comments',
+      populate: {
+        path: 'review',
+        populate: [
+          { path: 'game', model: 'Game' }, // Populate the game field within review
+          { path: 'creator', model: 'User' }, // Populate the creator field within review
+        ],
+      },
+    });
+  } catch (err) {
+    const error = new HttpError('Fetching comments failed, please try again later', 500);
+    return next(error);
+  }
+  res.json({
+    comments: userWithComments.comments.map((comment) => comment.toObject({ getters: true })),
+  });
 };
 
 const postComment = async (req, res, next) => {
@@ -61,6 +86,7 @@ const deleteCommentById = async (req, res, next) => {
 
 exports.getAllComments = getAllComments;
 exports.getCommentById = getCommentById;
+exports.getCommentsByUserId = getCommentsByUserId;
 exports.postComment = postComment;
 exports.updateCommentById = updateCommentById;
 exports.deleteCommentById = deleteCommentById;

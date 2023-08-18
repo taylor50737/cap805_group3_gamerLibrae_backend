@@ -25,6 +25,14 @@ router.get('/', reviewsController.getAllReviews);
 // Get a review with id
 router.get('/:id', reviewsController.getReview);
 
+// Post a comment with id
+router.post(
+  '/:id/comments',
+  loginRequired,
+  body('content').notEmpty(),
+  reviewsController.postComment,
+);
+
 // Get a review by user id
 router.get('/user/:uid', reviewsController.getReviewsByUserId);
 

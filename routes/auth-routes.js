@@ -14,7 +14,7 @@ router.post(
   [
     check('email').normalizeEmail().isEmail(),
     check('userName').isLength({ min: 3 }),
-    check('password').isLength({ min: 3 }),
+    check('password').isLength({ min: 8 }),
   ],
   authController.signup,
 );
@@ -35,7 +35,7 @@ router.post(
 // reset pw
 router.post(
   '/reset-password/:uid/:token',
-  [check('newPassword').isLength({ min: 3 }), check('confirmNewPassword').isLength({ min: 3 })],
+  [check('newPassword').isLength({ min: 8 }), check('confirmNewPassword').isLength({ min: 8 })],
   authController.resetPassword,
 );
 
