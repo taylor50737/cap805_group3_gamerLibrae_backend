@@ -36,4 +36,6 @@ router.post(
 // Get a review by user id
 router.get('/user/:uid', reviewsController.getReviewsByUserId);
 
+router.delete('/:rid', reviewsController.deleteReviewById);
+
 module.exports = router;

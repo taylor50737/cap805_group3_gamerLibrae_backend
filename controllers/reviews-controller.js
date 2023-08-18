@@ -144,8 +144,20 @@ const postComment = async (req, res, next) => {
   return res.status(201).send(createdComment);
 };
 
+const deleteReviewById = async (req, res, next) => {
+  const filter = { _id: req.params.rid };
+  try {
+    let doc = await Review.findOneAndDelete(filter);
+    res.json(doc);
+  } catch (err) {
+    const error = new HttpError('Delete review failed, please try again.', 500);
+    return next(error);
+  }
+};
+
 exports.getReview = getReview;
 exports.getReviewsByUserId = getReviewsByUserId;
 exports.postReview = postReview;
 exports.getAllReviews = getAllReviews;
 exports.postComment = postComment;
+exports.deleteReviewById = deleteReviewById;

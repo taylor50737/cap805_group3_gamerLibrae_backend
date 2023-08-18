@@ -1,5 +1,5 @@
 const express = require('express');
-const { loginRequired } = require('../middleware/auth-middleware');
+const { loginRequired, adminRequired } = require('../middleware/auth-middleware');
 
 const commentsController = require('../controllers/comments-controllers');
 
@@ -16,6 +16,6 @@ router.post('/', loginRequired, commentsController.postComment);
 
 router.put('/:cid', loginRequired, commentsController.updateCommentById);
 
-router.delete('/:cid', loginRequired, commentsController.deleteCommentById);
+router.delete('/:cid', commentsController.deleteCommentById);
 
 module.exports = router;
