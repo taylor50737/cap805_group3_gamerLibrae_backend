@@ -21,12 +21,16 @@ router.patch(
   usersController.changeUserInfo,
 );
 
-router.patch('/change-password', authMiddleware.loginRequired, [
-  check('currentPassword').not().isEmpty(),
-  check('newPassword').isLength({ min: 5 }),
-  check('confirmPassword').isLength({ min: 5 }),
-  usersController.changePassword,
-]);
+router.patch(
+  '/change-password',
+  authMiddleware.loginRequired,
+  [
+    check('currentPassword').not().isEmpty(),
+    check('newPassword').isLength({ min: 8 }),
+    check('confirmPassword').isLength({ min: 8 }),
+    usersController.changePassword,
+  ],
+);
 
 router.patch(
   '/change-profilepic',
