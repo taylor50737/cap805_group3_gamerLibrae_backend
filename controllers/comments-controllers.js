@@ -35,8 +35,8 @@ const getCommentsByUserId = async (req, res, next) => {
       populate: {
         path: 'review',
         populate: [
-          { path: 'game', model: 'Game' },     // Populate the game field within review
-          { path: 'creator', model: 'User' },  // Populate the creator field within review
+          { path: 'game', model: 'Game' }, // Populate the game field within review
+          { path: 'creator', model: 'User' }, // Populate the creator field within review
         ],
       },
     });
@@ -47,7 +47,7 @@ const getCommentsByUserId = async (req, res, next) => {
   res.json({
     comments: userWithComments.comments.map((comment) => comment.toObject({ getters: true })),
   });
-}
+};
 
 const postComment = async (req, res, next) => {
   const comment = new Comment(req.body);
