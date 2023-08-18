@@ -23,7 +23,7 @@ router.patch(
 
 router.patch(
   '/change-password',
-  // authMiddleware.loginRequired,
+  authMiddleware.loginRequired,
   [
     check('currentPassword').not().isEmpty(),
     check('newPassword').isLength({ min: 8 }),
